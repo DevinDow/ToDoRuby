@@ -13,7 +13,7 @@
   <body>
 
     <%= content_tag(:div, '', class: 'header') do %>
-      <%= image_tag 'check.png', size: '47', class: 'icon', alt: 'ToDo' %>
+      <%= link_to image_tag('check.png', size: '47', class: 'icon', alt: 'ToDo'), root_path %>
       <%= content_tag(:span, '', class: 'login') do %>
         Login
       <% end %>
