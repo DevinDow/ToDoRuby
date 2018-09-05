@@ -11,6 +11,17 @@
   </head>
 
   <body>
+
+    <%= content_tag(:div, '', class: 'header') do %>
+      <%= image_tag 'check.png', size: '47', class: 'icon', alt: 'ToDo' %>
+      <%= content_tag(:span, '', class: 'login') do %>
+        Login
+      <% end %>
+    <% end %>
+
+    <%= content_tag(:div, '', class: 'clear_both') %>
+
     <%= yield %>
+
   </body>
 </html>
