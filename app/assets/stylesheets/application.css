@@ -20,7 +20,6 @@ body {
 }
 
 .header {
-  float:left;
   margin-right:40px;
 }
 
@@ -28,11 +27,12 @@ body {
   margin: 10px 10px 10px 10px
 }
 
+.title {
+  font-size: xx-large;
+  letter-spacing: 0.14em;
+}
+
 .login {
   position:relative;
   top:-21px;
-}
-
-.clear_both {
-  clear: both;
 }
