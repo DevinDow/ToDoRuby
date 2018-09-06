@@ -17,8 +17,8 @@
 
 <p>
   <strong>List:</strong>
-  <%= @task.list %>
+  <%= @task.list.name %>
 </p>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to 'Back', list_tasks_path(@task.list) %>

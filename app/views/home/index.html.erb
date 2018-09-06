@@ -2,6 +2,21 @@
   <%= link_to list do %>
     <%= content_tag(:h1, list.name, class: 'list-name') %>
   <% end %>
+
+  <table>
+    <% list.tasks.each do |task| %>
+      <tr>
+        <td><%= task.name %></td>
+        <td><%= task.priority %></td>
+        <td><%= task.done %></td>
+        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= link_to 'New Task', new_list_task_path(list) %>
+
   <hr/>
 <% end %>
 

@@ -19,7 +19,7 @@
         <td><%= task.name %></td>
         <td><%= task.priority %></td>
         <td><%= task.done %></td>
-        <td><%= task.list %></td>
+        <td><%= task.list.name %></td>
         <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Task', new_task_path %>
+<%= link_to 'New Task', new_list_task_path %>
