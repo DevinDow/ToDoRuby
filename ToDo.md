@@ -1,5 +1,4 @@
 # Issues
-- views/tasks/new uses form that cannot understand "tasks_path" because it is now "list_tasks_path"
 
 # TODO
 - Views
@@ -13,8 +12,9 @@
 - [Add Users](https://www.railstutorial.org/book/modeling_users)
   - (https://edgeguides.rubyonrails.org/getting_started.html#basic-authentication)
   - Shared Lists requires a User/List DB Table instead of List belongs_to: User
-- use [AJAX](https://docs.google.com/document/d/1wDGbrMNZcC9fNPRmIvftnUF0gO9Ref1QsbdODm0KF-Y/edit#)
+- use [AJAX] for modifying/adding a Task(https://docs.google.com/document/d/1wDGbrMNZcC9fNPRmIvftnUF0gO9Ref1QsbdODm0KF-Y/edit#)
 - Destroy should require List is emptied first
+- Move Task to another List
 
 ## Consider
 - Document design decisions in the README
