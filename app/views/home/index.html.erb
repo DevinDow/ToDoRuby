@@ -4,7 +4,7 @@
   <table>
     <% list.tasks.each do |task| %>
       <tr>
-        <td><%= task.done ? 'X' : 'O' %></td>
+        <td><input type="checkbox" <%= task.done? ? "checked" : "" %> onclick="myFunction()"></td>
         <td><%= task.priority %></td>
         <td><%= task.name %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>

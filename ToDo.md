@@ -2,7 +2,6 @@
 
 # TODO
 - Views
-  - checkbox for done
   - /lists is not important
 - Models
   - [render Partials](https://edgeguides.rubyonrails.org/getting_started.html#rendering-a-partial-form)
