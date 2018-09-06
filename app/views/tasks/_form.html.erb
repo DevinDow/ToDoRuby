@@ -11,24 +11,24 @@
     </div>
   <% end %>
 
+  <h2>List = <%= @list.name %></h2>
+
   <table>
     <thead>
       <tr>
-        <td><%= form.label :done %></td>
-        <td><%= form.label :priority %></td>
-        <td><%= form.label :name %></td>
+        <td><strong><%= form.label :done %></strong></td>
+        <td><strong><%= form.label :priority %></strong></td>
+        <td><strong><%= form.label :name, "Task" %></strong></td>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><%= form.check_box :done %></td>
-        <td><%= form.number_field :priority, style: "width: 50px" %></td>
-        <td><%= form.text_field :name %></td>
+        <td><strong><%= form.check_box :done %></strong></td>
+        <td><strong><%= form.number_field :priority, style: "width: 50px" %></strong></td>
+        <td><strong><%= form.text_field :name %></strong></td>
+        <td><%= form.submit %></td>
       </tr>
     </tbody>
   </table>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

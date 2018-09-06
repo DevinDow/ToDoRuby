@@ -11,17 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <td><strong><%= form.label :name, "List Name" %></strong></td>
+        <td><strong><%= form.label :use_timeframe, "Uses Trimeframes" %></strong></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong><%= form.text_field :name %></strong></td>
+        <td><strong><%= form.check_box :use_timeframe %></strong></td>
+        <td><%= form.submit %></td>
+      </tr>
+    </tbody>
+  </table>
 
-  <div class="field">
-    <%= form.label :use_timeframe %>
-    <%= form.check_box :use_timeframe %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

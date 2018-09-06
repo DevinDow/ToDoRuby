@@ -1,7 +1,5 @@
 <% @lists.each do |list| %>
-  <%= link_to list do %>
-    <%= content_tag(:h1, list.name, class: 'list-name') %>
-  <% end %>
+  <h2><%= link_to list.name, list_path(list) %></h2>
 
   <table>
     <% list.tasks.each do |task| %>

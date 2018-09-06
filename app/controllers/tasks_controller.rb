@@ -1,17 +1,11 @@
 class TasksController < ApplicationController
-  before_action :set_list, only: [:index, :new, :create]
+  before_action :set_list, only: [:new, :create]
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks/all
   # GET /tasks/all.json
   def all
     @tasks = Task.includes(:list).joins(:list).select("tasks.*, lists.name as listname").order("listname", :priority).all
-  end
-
-  # GET /lists/:list_id/tasks
-  # GET /lists/:list_id/tasks.json
-  def index
-    @tasks = Task.order(:priority).all
   end
 
   # GET /tasks/1
@@ -26,6 +20,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/1/edit
   def edit
+    @list = @task.list
   end
 
   # POST /lists/:list_id/tasks
