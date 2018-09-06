@@ -3,7 +3,7 @@
 <h2><%= link_to @list.name, edit_list_path(@list) %></h2>
 
 <table>
-  <% @list.tasks.each do |task| %>
+  <% @tasks.each do |task| %>
     <tr>
       <td><%= task.name %></td>
       <td><%= task.priority %></td>
@@ -12,6 +12,5 @@
       <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
+    <tr><td><%= link_to 'New Task', new_list_task_path(@list) %></td></tr>
 </table>
-
-<%= link_to 'New Task', new_list_task_path(@list) %>

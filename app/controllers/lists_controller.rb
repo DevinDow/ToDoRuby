@@ -4,12 +4,13 @@ class ListsController < ApplicationController
   # GET /lists
   # GET /lists.json
   def index
-    @lists = List.all
+    @lists = List.order(:name).all
   end
 
   # GET /lists/1
   # GET /lists/1.json
   def show
+    @tasks = @list.tasks.order(:priority).all
   end
 
   # GET /lists/new

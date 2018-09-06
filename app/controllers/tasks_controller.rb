@@ -1,10 +1,10 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
-  # GET /tasks
-  # GET /tasks.json
+  # GET /lists/:list_id/tasks
+  # GET /lists/:list_id/tasks.json
   def index
-    @tasks = Task.all
+    @tasks = Task.order(:list_id, :priority)
   end
 
   # GET /tasks/1
@@ -21,8 +21,8 @@ class TasksController < ApplicationController
   def edit
   end
 
-  # POST /tasks
-  # POST /tasks.json
+  # POST /lists/:list_id/tasks
+  # POST /lists/:list_id/tasks.json
   def create
     @task = Task.new(task_params)
 

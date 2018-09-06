@@ -4,7 +4,7 @@
   <% end %>
 
   <table>
-    <% list.tasks.each do |task| %>
+    <% list.tasks.order(:priority).each do |task| %>
       <tr>
         <td><%= task.name %></td>
         <td><%= task.priority %></td>
