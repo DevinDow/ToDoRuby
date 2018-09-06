@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_04_132105) do
+ActiveRecord::Schema.define(version: 2018_09_06_125143) do
 
   create_table "lists", force: :cascade do |t|
     t.string "name"
     t.boolean "use_timeframe"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "name"
+    t.integer "priority"
+    t.boolean "done"
+    t.integer "list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_tasks_on_list_id"
   end
 
 end
