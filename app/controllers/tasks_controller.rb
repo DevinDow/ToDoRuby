@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   # GET /lists/:list_id/tasks
   # GET /lists/:list_id/tasks.json
   def index
-    @tasks = Task.order(:list_id, :priority)
+    @tasks = Task.includes(:list).joins(:list).select("tasks.*, lists.name as listname").order("listname", :priority).all
   end
 
   # GET /tasks/1
