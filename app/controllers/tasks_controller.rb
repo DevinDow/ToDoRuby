@@ -1,10 +1,17 @@
 class TasksController < ApplicationController
+  before_action :set_list, only: [:index, :new, :create]
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+
+  # GET /tasks/all
+  # GET /tasks/all.json
+  def all
+    @tasks = Task.includes(:list).joins(:list).select("tasks.*, lists.name as listname").order("listname", :priority).all
+  end
 
   # GET /lists/:list_id/tasks
   # GET /lists/:list_id/tasks.json
   def index
-    @tasks = Task.includes(:list).joins(:list).select("tasks.*, lists.name as listname").order("listname", :priority).all
+    @tasks = Task.order(:priority).all
   end
 
   # GET /tasks/1
@@ -12,7 +19,7 @@ class TasksController < ApplicationController
   def show
   end
 
-  # GET /tasks/new
+  # GET /lists/:list_id/tasks/new
   def new
     @task = Task.new
   end
@@ -63,6 +70,10 @@ class TasksController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_list
+      @list = List.find(params[:list_id])
+    end
+
     def set_task
       @task = Task.find(params[:id])
     end

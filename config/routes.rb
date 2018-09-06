@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/index'
 
+  get 'tasks', to: 'tasks#all', as: 'tasks'
+
   resources :lists do
     resources :tasks, shallow: true
   end

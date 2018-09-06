@@ -5,6 +5,7 @@
 <table>
   <% @tasks.each do |task| %>
     <tr>
+      <td><%= task.list.name %></td>
       <td><%= task.done ? 'X' : 'O' %></td>
       <td><%= task.priority %></td>
       <td><%= task.name %></td>
