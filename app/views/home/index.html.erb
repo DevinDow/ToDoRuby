@@ -6,16 +6,15 @@
   <table>
     <% list.tasks.each do |task| %>
       <tr>
-        <td><%= task.name %></td>
+        <td><%= task.done ? 'X' : 'O' %></td>
         <td><%= task.priority %></td>
-        <td><%= task.done %></td>
+        <td><%= task.name %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <tr><td colspan=4><%= link_to 'New Task', new_list_task_path(list) %></td></tr>
   </table>
-
-  <%= link_to 'New Task', new_list_task_path(list) %>
 
   <hr/>
 <% end %>
