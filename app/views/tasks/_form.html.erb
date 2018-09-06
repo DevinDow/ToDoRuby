@@ -11,20 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :priority %>
-    <%= form.number_field :priority %>
-  </div>
-
-  <div class="field">
-    <%= form.label :done %>
-    <%= form.check_box :done %>
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <td><%= form.label :done %></td>
+        <td><%= form.label :priority %></td>
+        <td><%= form.label :name %></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= form.check_box :done %></td>
+        <td><%= form.number_field :priority, style: "width: 50px" %></td>
+        <td><%= form.text_field :name %></td>
+      </tr>
+    </tbody>
+  </table>
 
   <div class="actions">
     <%= form.submit %>
