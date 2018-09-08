@@ -1,5 +1,4 @@
 # Issues
-- new Task success should redirect to the list because I removed tasks.show
 
 # TODO
 - Views
