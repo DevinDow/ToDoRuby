@@ -11,6 +11,7 @@ class TasksController < ApplicationController
   # GET /lists/:list_id/tasks/new
   def new
     @task = Task.new
+    @task.list_id = @list.id
   end
 
   # GET /tasks/1/edit

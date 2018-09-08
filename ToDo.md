@@ -1,5 +1,5 @@
 # Issues
-- new Task not working: rolls back transaction
+- new Task success should redirect to the list because I removed tasks.show
 
 # TODO
 - Views
