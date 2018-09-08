@@ -2,13 +2,11 @@
 
 # TODO
 - Views
-  - /lists is not important
+  - editable Task with "+" button to update or update on-the-fly with textChanged?  - /lists is not important
     - name should be link to show
   - /lists/id/edit offers delete
     - Destroy should require List is emptied first
 - Models
-  - [render Partials](https://edgeguides.rubyonrails.org/getting_started.html#rendering-partial-collections)
-    - editable Task with "+" button to update or update on-the-fly with textChanged?
   - Timeframes
     - default: false
   - [Validation](https://edgeguides.rubyonrails.org/getting_started.html#adding-some-validation)
