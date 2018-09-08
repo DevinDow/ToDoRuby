@@ -1,6 +1,7 @@
 # Issues
 
 # TODO
+- "x" button for Delete
 - Views
   - /lists is not important
     - name should be link to show
@@ -8,7 +9,7 @@
     - Destroy should require List is emptied first
 - Models
   - [render Partials](https://edgeguides.rubyonrails.org/getting_started.html#rendering-partial-collections)
-    - editable Task with "+" button to update or update on-the-fly?
+    - editable Task with "+" button to update or update on-the-fly with textChanged?
   - Timeframes
     - default: false
   - [Validation](https://edgeguides.rubyonrails.org/getting_started.html#adding-some-validation)
@@ -25,4 +26,4 @@
 - Document design decisions in the README
 - Cucumber/Rspec
 - Host on Heroku
-  - DB handle updates?
+  - DB: ephemeral vs AWS S3
