@@ -2,4 +2,4 @@
 <td><%= task.priority %></td>
 <td><%= task.name %></td>
 <td><%= link_to 'Edit', edit_task_path(task) %></td>
-<td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<td><%= button_to 'X', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>

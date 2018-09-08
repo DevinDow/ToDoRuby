@@ -2,9 +2,6 @@
 - new Task not working: rolls back transaction
 
 # TODO
-- "x" button for Delete
-  - [button_to](https://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-button_to)
-  - [button_tag](https://apidock.com/rails/ActionView/Helpers/FormTagHelper/button_tag)
 - Views
   - /lists is not important
     - name should be link to show
