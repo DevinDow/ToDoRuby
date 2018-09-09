@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/index'
 
-  get 'tasks', to: 'tasks#all', as: 'tasks'
+  get 'tasks', to: 'tasks#index', as: 'tasks'
 
   resources :lists do
     resources :tasks, shallow: true, :except => [:index, :show]

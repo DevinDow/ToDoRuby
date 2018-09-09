@@ -2,9 +2,9 @@ class TasksController < ApplicationController
   before_action :set_list, only: [:new, :create]
   before_action :set_task, only: [:edit, :update, :destroy]
 
-  # GET /tasks/all
-  # GET /tasks/all.json
-  def all
+  # GET /tasks
+  # GET /tasks.json
+  def index
     @tasks = Task.includes(:list).joins(:list).select("tasks.*, lists.name as listname").order("listname", :priority).all
   end
 
