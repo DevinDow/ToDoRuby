@@ -1,4 +1,5 @@
 <%= form_with(model: @task, url: @task.new_record? ? [@list, @task] : @task) do |form| %>
+<%# form url: new Task POSTs to /list/id/task; update Task PATCHes to /task/id; both Controller methods then redirect to /list/id %>
   <% if task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -25,9 +26,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><strong><%= form.check_box :done %></strong></td>
-        <td><strong><%= form.number_field :priority, style: "width: 50px" %></strong></td>
-        <td><strong><%= form.text_field :name %></strong></td>
+        <td><%= form.check_box :done %></td>
+        <td><%= form.number_field :priority, style: "width: 50px" %></td>
+        <td><%= form.text_field :name %></td>
         <td><%= form.submit %></td>
       </tr>
     </tbody>
