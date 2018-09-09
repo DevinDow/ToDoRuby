@@ -27,7 +27,7 @@
     <tbody>
       <tr>
         <td><%= form.check_box :done %></td>
-        <td><%= form.number_field :priority, style: "width: 50px" %></td>
+        <td><%= form.number_field :priority, options = { style: "width: 50px" } %></td>
         <td><%= form.text_field :name %></td>
         <td><%= form.submit %></td>
       </tr>
