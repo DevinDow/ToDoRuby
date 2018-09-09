@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#index'
-  get 'home/index'
+  root to: 'home#index'
 
   get 'tasks', to: 'tasks#index', as: 'tasks'
 
