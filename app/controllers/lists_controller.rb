@@ -55,6 +55,10 @@ class ListsController < ApplicationController
   # DELETE /lists/1
   # DELETE /lists/1.json
   def destroy
+    if @list.tasks.count > 0
+      redirect_to lists_url, alert: 'List contains Tasks that must be deleted before the List can be deleted.'
+      return
+    end
     @list.destroy
     respond_to do |format|
       format.html { redirect_to lists_url, notice: 'List was successfully destroyed.' }
