@@ -1,7 +1,7 @@
 <h2><%= link_to @list.name, edit_list_path(@list) %></h2>
 
 <table>
-  <% @tasks.each do |task| %>
+  <% @list.tasks.each do |task| %>
     <tr>
       <%= render 'layouts/task', task: task %>
     </tr>
