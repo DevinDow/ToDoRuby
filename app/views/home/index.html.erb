@@ -2,11 +2,7 @@
   <h2><%= link_to list.name, list_path(list) %></h2>
 
   <table>
-    <% list.tasks.each do |task| %>
-      <tr>
-        <%= render 'layouts/task', task: task %>
-      </tr>
-    <% end %>
+    <%= render list.tasks %>
     <tr><td colspan=4><%= link_to 'New Task', new_list_task_path(list) %></td></tr>
   </table>
 

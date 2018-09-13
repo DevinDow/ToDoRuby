@@ -1,12 +1,8 @@
 <h2><%= link_to @list.name, edit_list_path(@list) %></h2>
 
 <table>
-  <% @list.tasks.each do |task| %>
-    <tr>
-      <%= render 'layouts/task', task: task %>
-    </tr>
-  <% end %>
-    <tr><td colspan=4><%= link_to 'New Task', new_list_task_path(@list) %></td></tr>
+  <%= render @list.tasks %>
+  <tr><td colspan=4><%= link_to 'New Task', new_list_task_path(@list) %></td></tr>
 </table>
 
 <%= link_to 'Back', root_path %>

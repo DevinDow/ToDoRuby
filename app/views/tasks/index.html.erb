@@ -1,10 +1,5 @@
 <h2>All Tasks</h2>
 
 <table>
-  <% @tasks.each do |task| %>
-    <tr>
-      <td><%= task.list.name %></td>
-      <%= render 'layouts/task', task: task %>
-    </tr>
-  <% end %>
+  <%= render @tasks, show_list_name: true %>
 </table>
