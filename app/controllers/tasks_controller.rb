@@ -39,7 +39,7 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
-        format.html { redirect_to list_path(@task.list_id), notice: 'Task was successfully updated.' }
+        format.html { redirect_to @task.list, notice: 'Task was successfully updated.' }
         format.json { render :show, status: :ok, location: @task }
       else
         format.html { render :edit }
@@ -51,9 +51,10 @@ class TasksController < ApplicationController
   # DELETE /tasks/1
   # DELETE /tasks/1.json
   def destroy
+    list = @task.list
     @task.destroy
     respond_to do |format|
-      format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
+      format.html { redirect_to list, notice: 'Task was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
