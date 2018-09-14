@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
+  get 'users/new'
+
   get 'tasks', to: 'tasks#index', as: 'tasks'
 
   resources :lists do
