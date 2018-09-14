@@ -2,6 +2,7 @@
 
 # TODO
 - Tests
+  - https://github.com/schneems/reddit_on_rails/blob/master/part_three.md#testing
 - Views
   - editable **Task** with "+" button to update or update on-the-fly with textChanged?
   - */lists* is not important
@@ -28,3 +29,8 @@
 - Cucumber/Rspec
 - Host on Heroku
   - DB: ephemeral vs AWS S3
+
+## Improvements
+- https://github.com/schneems/reddit_on_rails/blob/master/part_three.md#boilerplate-bootstrap-layout
+- https://github.com/schneems/reddit_on_rails/blob/master/part_three.md#add-the-flash
+- https://github.com/schneems/reddit_on_rails/blob/master/part_three.md#sidebar
