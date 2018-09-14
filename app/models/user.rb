@@ -1,3 +1,7 @@
 class User < ApplicationRecord
-  attr_accessor :email
+
+  def initialize(attributes = {})
+    super
+    @email = attributes[:email]
+  end
 end
