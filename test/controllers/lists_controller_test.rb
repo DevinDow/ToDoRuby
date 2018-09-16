@@ -42,7 +42,7 @@ class ListsControllerTest < ActionDispatch::IntegrationTest
 
   test "should not destroy non-empty list" do
     delete list_url(@list)
-    assert_not flash["alert"].nil?
+    assert_not_empty flash["alert"]
     assert_redirected_to lists_url
   end
 
@@ -50,7 +50,7 @@ class ListsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('List.count', -1) do
       delete list_url(@empty_list)
     end
-    assert_not flash["notice"].nil?
+    assert_not_empty flash["notice"]
     assert_redirected_to root_url
   end
 
