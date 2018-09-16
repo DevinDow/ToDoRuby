@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: List1
   use_timeframe: false
 
 two:
-  name: MyString
+  name: List2
+  use_timeframe: false
+
+empty:
+  name: EmptyList
   use_timeframe: false

@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class ListsControllerTest < ActionDispatch::IntegrationTest
+
   setup do
     @list = lists(:one)
+    @empty_list = lists(:empty)
   end
 
   test "should get index" do
@@ -38,11 +40,18 @@ class ListsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to list_url(@list)
   end
 
-  test "should destroy list" do
-    assert_difference('List.count', -1) do
-      delete list_url(@list)
-    end
-
+  test "should not destroy non-empty list" do
+    delete list_url(@list)
+    assert_not flash["alert"].nil?
     assert_redirected_to lists_url
   end
+
+  test "should destroy empty list" do
+    assert_difference('List.count', -1) do
+      delete list_url(@empty_list)
+    end
+    assert_not flash["notice"].nil?
+    assert_redirected_to root_url
+  end
+
 end
