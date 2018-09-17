@@ -46,12 +46,21 @@ div {
   }
 }
 
-#notice {
+.alert {
+  color: black;
+}
+
+.flash-notice {
   color: green;
 }
 
-#alert {
+.flash-alert {
   color: red;
+}
+
+.flash-danger {
+  color: red;
+  font-weight: bold;
 }
 
 .field_with_errors {
