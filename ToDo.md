@@ -19,7 +19,7 @@
 - Models
   - **Timeframes**
     - default: false
-  - [Validation](https://edgeguides.rubyonrails.org/getting_started.html#adding-some-validation)
+  - [Validation](https://edgeguides.rubyonrails.org/active_record_validations.html)
 - Features
   - Move a **Task** to another **List**
 
