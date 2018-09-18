@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
   # Home
   root to: 'home#index'
   get 'about', to: 'home#about'
