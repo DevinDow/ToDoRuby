@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
-  root to: 'home#index'
 
+  # Home
+  root to: 'home#index'
+  get 'about', to: 'home#about'
+  get 'flash', to: 'home#flashtest'
+
+  # Users
+  get 'users/new'
+  get 'signup', to: 'users#new'
+  post 'signup',  to: 'users#create'
+  resources :users
+
+  # Lists & Tasks
   get 'tasks', to: 'tasks#index', as: 'tasks'
 
   resources :lists do

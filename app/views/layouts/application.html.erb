@@ -12,21 +12,27 @@
 
   <body>
 
-    <%= content_tag(:div, '', class: 'header', style: 'float: left') do %>
-      <%= link_to root_path do %>
-        <%= image_tag('check.png', size: '47', class: 'icon', alt: 'ToDo') %>
-        <%= content_tag(:span, '', class: 'login') do %>
-          <%= content_tag(:span, "Devin's ToDos", class: 'title') %>
-        <% end %>
+    <%= render 'layouts/header' %>
+
+    <div class="container">
+
+      <% flash.each do |message_type, message| %>
+        <% if message_type == 'notice' then message_type = 'success' end %>
+        <% if message_type == 'alert' then message_type = 'danger' end %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
-    <% end %>
 
-    <%= content_tag(:div, '', style: 'clear: both') %>
+      <div class="container">
+        <%= yield %>
+      </div>
 
-    <p id="notice"><%= notice %></p>
-    <p id="alert"><%= alert %></p>
+      <%= render 'layouts/footer' %>
 
-    <%= yield %>
+      <%= debug(params) if Rails.env.development? %>
+      <%= debug(flash) if Rails.env.development? %>
+
+    </div>
 
   </body>
+
 </html>

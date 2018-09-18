@@ -1,0 +1,22 @@
+<header class="navbar navbar-inverse">
+
+  <div class="container">
+    
+    <div class="title_block">
+      <%= link_to root_path do %>
+        <%= image_tag('check.ico', size: '16', class: 'icon', alt: 'ToDo') %>
+        <%= content_tag(:span, "Devin's ToDos", class: 'title') %>
+      <% end %>
+    </div>
+
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", '#' %></li>
+        <li><%= link_to "About", 'about' %></li>
+        <li><%= link_to "Log in", '#' %></li>
+      </ul>
+    </nav>
+
+  </div>
+
+</header>

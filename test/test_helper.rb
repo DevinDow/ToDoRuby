@@ -8,5 +8,5 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-  Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new()]
+  Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new(:color => true)]
 end

@@ -65,6 +65,7 @@ class ListsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_list
@@ -75,4 +76,5 @@ class ListsController < ApplicationController
     def list_params
       params.require(:list).permit(:name, :use_timeframe)
     end
+
 end

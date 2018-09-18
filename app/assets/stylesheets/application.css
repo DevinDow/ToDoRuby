@@ -15,27 +15,24 @@
  */
 
 body {
+  color: #666;
   background-color: #DDDDDD;
-  margin: 8px;
+  margin: 0px;
 }
 
-.header {
-  margin-right:40px;
+a {
+  color: #666;
 }
 
-.icon {
-  margin: 10px 10px 10px 10px
+.title_block {
+  margin-top: 18px;
 }
 
 .title {
   font-size: xx-large;
+  vertical-align: middle;
 }
 
-.login {
-  position:relative;
-  top:-21px;
-}
-
-.list-name {
-  font-size: large;
+.icon {
+  vertical-align: middle;
 }
