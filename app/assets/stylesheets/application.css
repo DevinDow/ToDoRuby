@@ -15,8 +15,13 @@
  */
 
 body {
+  color: #666;
   background-color: #DDDDDD;
   margin: 0px;
+}
+
+a {
+  color: #666;
 }
 
 .title_block {
@@ -30,8 +35,4 @@ body {
 
 .icon {
   vertical-align: middle;
-}
-
-.list-name {
-  font-size: large;
 }
