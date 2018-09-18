@@ -2,11 +2,13 @@ Rails.application.routes.draw do
 
   # Home
   root to: 'home#index'
+  get 'about', to: 'home#about'
+  get 'flash', to: 'home#flashtest'
 
   # Users
   get 'users/new'
   get 'signup', to: 'users#new'
-  post '/signup',  to: 'users#create'
+  post 'signup',  to: 'users#create'
   resources :users
 
   # Lists & Tasks
