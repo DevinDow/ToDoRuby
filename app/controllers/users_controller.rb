@@ -19,7 +19,10 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html do 
+          log_in @user
+          redirect_to @user, notice: 'User was successfully created.'
+        end
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
