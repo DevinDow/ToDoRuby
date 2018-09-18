@@ -16,15 +16,19 @@
 
 body {
   background-color: #DDDDDD;
-  margin: 8px;
 }
 
-.icon {
-  margin: 10px 10px 10px 10px
+.title_block {
+  margin-top: 18px;
 }
 
 .title {
   font-size: xx-large;
+  vertical-align: middle;
+}
+
+.icon {
+  vertical-align: middle;
 }
 
 .list-name {
