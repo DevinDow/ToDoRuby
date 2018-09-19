@@ -8,7 +8,7 @@ module SessionsHelper
    # Returns the current logged-in user (if any).
    def current_user
     if cookies[:user_id]
-      @current_user ||= User.find_by(id: cookies[:user_id])
+      User.find_by(id: cookies[:user_id])
     end
   end
 
@@ -20,7 +20,6 @@ module SessionsHelper
   # Logs out the current user.
   def log_out
     cookies.delete(:user_id)
-    @current_user = nil
   end
 
 end
