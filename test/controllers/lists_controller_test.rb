@@ -4,7 +4,7 @@ class ListsControllerTest < ActionDispatch::IntegrationTest
 
   setup do
     @user = users(:user_a)
-    post login_path, params: { session: { email: @user.email, password: "password" } }
+    log_in_as @user
 
     @list = lists(:one)
     @empty_list = lists(:empty)
