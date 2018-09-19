@@ -7,11 +7,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  # GET /signup
   # GET /users/new
   def new
     @user = User.new
   end
 
+  # POST /signup
   # POST /users
   # POST /users.json
   def create
