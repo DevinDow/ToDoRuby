@@ -9,9 +9,9 @@ class ActiveSupport::TestCase
 
   # Returns true if a test user is logged in.
   def is_logged_in?
-    !session[:user_id].nil?
+    !cookies[:user_id].blank?
   end
 
-  # Add more helper methods to be used by all tests here...
-  Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new(:color => true)]
+  # Minittest::Reporters::SpecReporter shows Test Classes & Test Names with Times
+  #Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new(:color => true)]
 end

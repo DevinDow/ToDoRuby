@@ -30,6 +30,7 @@
 
       <%= debug(params) if Rails.env.development? %>
       <%= debug(flash) if Rails.env.development? %>
+      <%= debug(cookies[:user_id]) if Rails.env.development? %>
 
     </div>
 
