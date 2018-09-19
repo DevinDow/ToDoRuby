@@ -2,6 +2,9 @@ require 'test_helper'
 
 class TasksControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @user = users(:user_a)
+    post login_path, params: { session: { email: @user.email, password: "password" } }
+
     @list = lists(:empty)
     @task = tasks(:one)
   end

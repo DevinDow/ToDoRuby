@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :require_logged_in_user
   before_action :set_list, only: [:new, :create]
   before_action :set_task, only: [:edit, :update, :destroy]
 

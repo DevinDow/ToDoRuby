@@ -3,6 +3,9 @@ require 'test_helper'
 class ListsControllerTest < ActionDispatch::IntegrationTest
 
   setup do
+    @user = users(:user_a)
+    post login_path, params: { session: { email: @user.email, password: "password" } }
+
     @list = lists(:one)
     @empty_list = lists(:empty)
   end
