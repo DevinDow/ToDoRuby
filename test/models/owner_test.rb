@@ -10,12 +10,12 @@ class OwnerTest < ActiveSupport::TestCase
     assert @owner.valid?
   end
 
-  test "should require a follower_id" do
+  test "should require a user_id" do
     @owner.user_id = nil
     assert_not @owner.valid?
   end
 
-  test "should require a followed_id" do
+  test "should require a list_id" do
     @owner.list_id = nil
     assert_not @owner.valid?
   end

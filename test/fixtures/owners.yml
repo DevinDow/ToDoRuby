@@ -1,16 +1,26 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-owner1:
+owner_a_1:
   user: user_a
   list: list1
   my_list_name: MyString
 
-owner2:
+owner_a_2:
   user: user_a
   list: list2
   my_list_name: MyString
 
-owner3:
+owner_a_empty:
   user: user_a
   list: empty_list
+  my_list_name: MyString
+
+owner_a_shared:
+  user: user_a
+  list: shared_list
+  my_list_name: MyString
+
+owner_b_shared:
+  user: user_b
+  list: shared_list
   my_list_name: MyString

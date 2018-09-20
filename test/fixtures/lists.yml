@@ -11,3 +11,7 @@ list2:
 empty_list:
   name: EmptyList
   use_timeframe: false
+
+shared_list:
+  name: SharedList
+  use_timeframe: false

@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class ListsTest < ApplicationSystemTestCase
   setup do
-    @list = lists(:one)
+    @list = lists(:list1)
   end
 
   test "visiting the index" do
