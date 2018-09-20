@@ -25,3 +25,4 @@ Things you may want to cover:
 
 # Design Decisions
 - **Task** is a subitem of **List**
+- **Owners** allows a **List** to be owned by multiple **Users**

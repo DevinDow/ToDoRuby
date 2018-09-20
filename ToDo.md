@@ -12,10 +12,9 @@
 - Users
   - password reset?
 - Views
-  - editable **Task** with "+" button to update or update on-the-fly with textChanged?
   - single-page app?
-- AJAX
-  - use [AJAX](https://docs.google.com/document/d/1wDGbrMNZcC9fNPRmIvftnUF0gO9Ref1QsbdODm0KF-Y/edit#) for modifying/adding a Task
+    - editable **Task** with "+" button to update & refresh
+      - use [AJAX](https://docs.google.com/document/d/1wDGbrMNZcC9fNPRmIvftnUF0gO9Ref1QsbdODm0KF-Y/edit#) for modifying/adding a Task
 - Models
   - **Timeframes**
     - default: false
@@ -26,16 +25,7 @@
   - https://github.com/schneems/reddit_on_rails/blob/master/part_three.md#testing
   - https://guides.rubyonrails.org/testing.html
 
-### Sharing
-- use email address?
-
 ## Consider
 - Document design decisions in the README
-- Cucumber/Rspec
 - Host on Heroku
   - DB: ephemeral vs AWS S3
-
-## Improvements
-- https://github.com/schneems/reddit_on_rails/blob/master/part_three.md#boilerplate-bootstrap-layout
-- https://github.com/schneems/reddit_on_rails/blob/master/part_three.md#add-the-flash
-- https://github.com/schneems/reddit_on_rails/blob/master/part_three.md#sidebar
