@@ -29,6 +29,7 @@ class ListsController < ApplicationController
 
     respond_to do |format|
       if @list.save
+        @list.owners.create(user_id: current_user.id)
         format.html { redirect_to @list, notice: 'List was successfully created.' }
         format.json { render :show, status: :created, location: @list }
       else

@@ -2,9 +2,6 @@
 
 # TODO
 - Owners
-  - Create List adds to Owner
-    - user.lists.create()
-      - ex. user.active_relationships.create(followed_id: other_user.id)
   - Share adds to Owner
     - list users?  or send email?
   - Delete removes from Owners
