@@ -1,5 +1,9 @@
 <% @lists.each do |list| %>
   <h2><%= link_to list.name, list_path(list) %></h2>
+  <% if !@other_users_per_list[list.id].blank? %>
+    (SHARED WITH: <%= @other_users_per_list[list.id] %>)
+  <% end %>
+
 
   <table>
     <%= render list.tasks %>

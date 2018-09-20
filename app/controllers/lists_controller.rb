@@ -11,8 +11,7 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
-    user = current_user
-    @other_users = @list.owners.select{|owner| owner.user != user}.map{|owner| owner.user.name}.join(', ')
+    @other_users = @list.owners.select{|owner| owner.user != current_user}.map{|owner| owner.user.name}.join(', ')
   end
 
   # GET /lists/new
