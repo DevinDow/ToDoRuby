@@ -2,6 +2,11 @@
 
 # TODO
 - Owners
+  - Would it be better to use DB joins to avoid multiple queries?
+    - current_user
+      - owners.where(user_id: 1) CACHED
+        - lists.where(list_id: l)
+          - tasks.where(list_id: l)
   - protect other Lists & their Tasks
   - Create List adds to Owner
     - user.lists.create()

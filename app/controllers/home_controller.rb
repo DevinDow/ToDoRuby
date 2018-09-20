@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   # GET /
   def index
-    @lists = List.includes(:tasks).order(:name).all
+    @owners = current_user.owners
   end
 
   # GET /about

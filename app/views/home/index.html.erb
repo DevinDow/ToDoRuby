@@ -1,4 +1,5 @@
-<% @lists.each do |list| %>
+<% @owners.each do |owner| %>
+  <% list = owner.list %>
   <h2><%= link_to list.name, list_path(list) %></h2>
 
   <table>
