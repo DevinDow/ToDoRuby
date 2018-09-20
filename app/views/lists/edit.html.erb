@@ -1,3 +1,5 @@
 <%= render 'form', list: @list %>
 
+<%= button_to 'X', @list, options = { method: :delete, data: { confirm: 'Are you sure?' } } %>
+
 <%= link_to 'Back', @list %>

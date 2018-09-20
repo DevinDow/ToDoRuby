@@ -6,23 +6,17 @@
     - user.lists.create()
       - ex. user.active_relationships.create(followed_id: other_user.id)
   - Share adds to Owner
-  - Delete only removes from Owners if there are other owners
-  - protect other Lists & their Tasks
+    - list users?  or send email?
+  - Delete removes from Owners
+    - if there are no other owners then destroy List
+    - protect non-owner Lists & their Tasks
+  - change List Name updates Owner when more than one Owner, or Name propogated to Owner?
 - Host on heroku
 - Users
   - password reset?
 - Views
   - editable **Task** with "+" button to update or update on-the-fly with textChanged?
   - single-page app?
-    - */lists* is not important
-      - name should be link to show
-  - */lists/id/edit*
-    - offers delete
-      - Destroy should require List is emptied first
-      - only destroy List when last Owner, otherwise just unshare
-    - offers share
-      - list users?  or send email?
-    - change List Name updates Owner when more than one Owner, or Name propogated to Owner?
 - AJAX
   - use [AJAX](https://docs.google.com/document/d/1wDGbrMNZcC9fNPRmIvftnUF0gO9Ref1QsbdODm0KF-Y/edit#) for modifying/adding a Task
 - Models
