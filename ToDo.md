@@ -1,6 +1,8 @@
 # Issues
+- running posgresql locally
 
 # TODO
+- if no Lists then put some text: "Please create a new List to get started" or create User should add a DB?
 - Owners
   - Share adds to Owner
     - list users?  or send email?
@@ -8,7 +10,6 @@
     - if there are no other owners then destroy List
     - protect non-owner Lists & their Tasks
   - change List Name updates Owner when more than one Owner, or Name propogated to Owner?
-- Host on heroku
 - Users
   - password reset?
 - Views
