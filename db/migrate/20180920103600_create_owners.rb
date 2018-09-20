@@ -7,8 +7,6 @@ class CreateOwners < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :owners, :user_id
-    add_index :owners, :list_id
     add_index :owners, [:user_id, :list_id], unique: true
   end
 end
