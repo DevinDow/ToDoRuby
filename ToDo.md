@@ -1,19 +1,28 @@
 # Issues
 
 # TODO
-- [Add Users](https://www.railstutorial.org/book/modeling_users)
-  - (https://edgeguides.rubyonrails.org/getting_started.html#basic-authentication)
-  - Shared **Lists** requires a **User_List** DB Table instead of **List** *belongs_to: User*
-    - should **User_List** have a custom **Name** or **Order** for the **List**? (ex *"1-Priorities"* vs *"1"* & *"Priorities"*)
-- Tests
-  - https://github.com/schneems/reddit_on_rails/blob/master/part_three.md#testing
-  - https://guides.rubyonrails.org/testing.html
+- Owners
+  - protect other Lists & their Tasks
+  - Create List adds to Owner
+    - user.lists.create()
+      - ex. user.active_relationships.create(followed_id: other_user.id)
+  - Share adds to Owner
+  - Delete only removes from Owners if there are other owners
+- Host on heroku
+- Users
+  - password reset?
 - Views
   - editable **Task** with "+" button to update or update on-the-fly with textChanged?
-  - */lists* is not important
-    - name should be link to show
-  - */lists/id/edit* offers delete
-    - Destroy should require List is emptied first
+  - single-page app?
+    - */lists* is not important
+      - name should be link to show
+  - */lists/id/edit*
+    - offers delete
+      - Destroy should require List is emptied first
+      - only destroy List when last Owner, otherwise just unshare
+    - offers share
+      - list users?  or send email?
+    - change List Name updates Owner when more than one Owner, or Name propogated to Owner?
 - AJAX
   - use [AJAX](https://docs.google.com/document/d/1wDGbrMNZcC9fNPRmIvftnUF0gO9Ref1QsbdODm0KF-Y/edit#) for modifying/adding a Task
 - Models
@@ -22,6 +31,9 @@
   - [Validation](https://edgeguides.rubyonrails.org/active_record_validations.html)
 - Features
   - Move a **Task** to another **List**
+- Tests
+  - https://github.com/schneems/reddit_on_rails/blob/master/part_three.md#testing
+  - https://guides.rubyonrails.org/testing.html
 
 ### Sharing
 - use email address?
