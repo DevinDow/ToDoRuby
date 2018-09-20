@@ -1,11 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user: one
-  list: one
+owner1:
+  user: user_a
+  list: list1
   my_list_name: MyString
 
-two:
-  user: two
-  list: two
+owner2:
+  user: user_a
+  list: list2
+  my_list_name: MyString
+
+owner3:
+  user: user_a
+  list: empty_list
   my_list_name: MyString

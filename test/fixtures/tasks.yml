@@ -1,13 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: Task1
+task1a:
+  name: Task1a
   priority: 1
   done: false
-  list: one
+  list: list1
 
-two:
-  name: Task2
+task1b:
+  name: Task1b
   priority: 1
   done: false
-  list: two
+  list: list1
+
+task2a:
+  name: Task2a
+  priority: 1
+  done: false
+  list: list2

@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+list1:
   name: List1
   use_timeframe: false
 
-two:
+list2:
   name: List2
   use_timeframe: false
 
-empty:
+empty_list:
   name: EmptyList
   use_timeframe: false

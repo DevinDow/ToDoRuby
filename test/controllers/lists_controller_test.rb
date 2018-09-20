@@ -6,8 +6,9 @@ class ListsControllerTest < ActionDispatch::IntegrationTest
     @user = users(:user_a)
     log_in_as @user
 
-    @list = lists(:one)
-    @empty_list = lists(:empty)
+    @list1 = lists(:list1)
+
+    @empty_list = lists(:empty_list)
   end
 
   test "should get index" do
@@ -22,31 +23,31 @@ class ListsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create list" do
     assert_difference('List.count') do
-      post lists_url, params: { list: { name: @list.name, use_timeframe: @list.use_timeframe } }
+      post lists_url, params: { list: { name: @list1.name, use_timeframe: @list1.use_timeframe } }
     end
 
     assert_redirected_to list_url(List.last)
   end
 
   test "should show list" do
-    get list_url(@list)
+    get list_url(@list1)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_list_url(@list)
+    get edit_list_url(@list1)
     assert_response :success
   end
 
   test "should update list" do
-    patch list_url(@list), params: { list: { name: @list.name, use_timeframe: @list.use_timeframe } }
-    assert_redirected_to list_url(@list)
+    patch list_url(@list1), params: { list: { name: @list1.name, use_timeframe: @list1.use_timeframe } }
+    assert_redirected_to list_url(@list1)
   end
 
   test "should not destroy non-empty list" do
-    delete list_url(@list)
+    delete list_url(@list1)
     assert_not_empty flash[:alert]
-    assert_redirected_to lists_url
+    assert_redirected_to list_url
   end
 
   test "should destroy empty list" do
