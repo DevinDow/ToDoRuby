@@ -3,14 +3,10 @@
 <table>
   <% @lists.each do |list| %>
     <tr>
-      <td><%= list.name %></td>
+      <td><%= link_to list.name, list %></td>
       <td><%= list.use_timeframe ? 'Uses Timeframes' : '' %></td>
-      <td><%= link_to 'Show', list %></td>
-      <td><%= link_to 'Edit', edit_list_path(list) %></td>
-      <td><%= link_to 'Destroy', list, options = { method: :delete, data: { confirm: 'Are you sure?' } } %></td>
     </tr>
   <% end %>
-    <tr><td colspan=4><%= link_to 'New List', new_list_path %></td></tr>
 </table>
 
-<br>
+<%= link_to 'New List', new_list_path %>

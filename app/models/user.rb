@@ -1,13 +1,22 @@
 class User < ApplicationRecord
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  has_many :owners, dependent: :destroy
 
   before_save { self.email = email.downcase }
 
   validates :name, presence: true
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
 
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+
+  
+  def lists
+    owners.map do |owner|
+      owner.list
+    end  
+  end
+
 
   # Returns the hash digest of the given string.
   def User.digest(string)
