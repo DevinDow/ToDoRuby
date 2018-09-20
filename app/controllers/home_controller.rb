@@ -3,7 +3,9 @@ class HomeController < ApplicationController
 
   # GET /
   def index
-    @owners = current_user.owners
+    @lists = current_user.owners.map do |owner|
+      owner.list
+    end
   end
 
   # GET /about

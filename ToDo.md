@@ -2,17 +2,12 @@
 
 # TODO
 - Owners
-  - Would it be better to use DB joins to avoid multiple queries?
-    - current_user
-      - owners.where(user_id: 1) CACHED
-        - lists.where(list_id: l)
-          - tasks.where(list_id: l)
-  - protect other Lists & their Tasks
   - Create List adds to Owner
     - user.lists.create()
       - ex. user.active_relationships.create(followed_id: other_user.id)
   - Share adds to Owner
   - Delete only removes from Owners if there are other owners
+  - protect other Lists & their Tasks
 - Host on heroku
 - Users
   - password reset?
