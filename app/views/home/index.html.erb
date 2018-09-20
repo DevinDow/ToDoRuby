@@ -3,10 +3,11 @@
 
   <table>
     <%= render list.tasks %>
-    <tr><td colspan=4><%= link_to 'New Task', new_list_task_path(list) %></td></tr>
   </table>
+
+  <%= button_to 'New Task', new_list_task_path(list), options = { method: :get } %>
 
   <hr/>
 <% end %>
 
-<%= link_to 'New List', new_list_path %>
+<%= button_to 'New List', new_list_path, options = { method: :get } %>
