@@ -1,7 +1,11 @@
-# Issues
+# ToDo
+
+## Issues
+
 - running posgresql locally
 
-# TODO
+## TODO
+
 - if no Lists then put some text: "Please create a new List to get started" or create User should add a DB?
 - Owners
   - Share adds to Owner
@@ -23,10 +27,11 @@
 - Features
   - Move a **Task** to another **List**
 - Tests
-  - https://github.com/schneems/reddit_on_rails/blob/master/part_three.md#testing
-  - https://guides.rubyonrails.org/testing.html
+  - [Rails Guides on Testing](https://guides.rubyonrails.org/testing.html)
+  - [Scneems on Testing](https://github.com/schneems/reddit_on_rails/blob/master/part_three.md#testing)
 
 ## Consider
+
 - Document design decisions in the README
 - Host on Heroku
   - DB: ephemeral vs AWS S3
