@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: pgapp_development
+  database: todo_development
   username: postgres
   password: password
 
@@ -31,7 +31,7 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: pgapp
+  #username: postgres
 
   # The password associated with the postgres role (username).
   #password:
@@ -59,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: pgapp_test
+  database: todo_test
   username: postgres
   password: password
 
@@ -84,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: pgapp_production
-  username: pgapp
+  database: todo_production
+  username: postgres
   password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
