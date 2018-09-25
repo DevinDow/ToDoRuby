@@ -1,5 +1,5 @@
+<%# new Task POSTs to /list/id/task; update Task PATCHes to /task/id; both Controller methods then redirect to /list/id %>
 <%= form_with(model: @task, url: @task.new_record? ? [@list, @task] : @task) do |form| %>
-<%# form url: new Task POSTs to /list/id/task; update Task PATCHes to /task/id; both Controller methods then redirect to /list/id %>
   <% if task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>

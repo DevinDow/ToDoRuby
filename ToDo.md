@@ -20,6 +20,7 @@
   - single-page app?
     - editable **Task** with "+" button to update & refresh
       - use [AJAX](https://docs.google.com/document/d/1wDGbrMNZcC9fNPRmIvftnUF0gO9Ref1QsbdODm0KF-Y/edit#) for modifying/adding a Task
+      - https://m.patrikonrails.com/do-you-really-need-that-fancy-javascript-framework-e6f2531f8a38
 - Models
   - **Timeframes**
     - default: false
