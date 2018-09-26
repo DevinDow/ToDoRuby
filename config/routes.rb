@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   # Lists & Tasks
-  get 'tasks', to: 'tasks#index', as: 'tasks'
+  get 'tasks', to: 'tasks#index', as: 'tasks'  # index of all Tasks, not just those of one List
 
   resources :lists do
     resources :tasks, shallow: true, :except => [:index, :show]

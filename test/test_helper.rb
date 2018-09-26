@@ -4,6 +4,8 @@ require 'rails/test_help'
 require "minitest/reporters"
 
 class ActiveSupport::TestCase
+  puts Time.now
+
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
