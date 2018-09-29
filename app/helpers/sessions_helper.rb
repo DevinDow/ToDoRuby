@@ -2,18 +2,18 @@ module SessionsHelper
 
   # Store user.id in permanent cookies.
   def log_in(user)
-    cookies.permanent[:todo_id] = user.id
+    cookies.permanent[:todo_user_id] = user.id
   end
 
-  # Clear :user_id from cookies.
+  # Clear :todo_user_id from cookies.
   def log_out
-    cookies.delete(:user_id)
+    cookies.delete(:todo_user_id)
   end
 
    # Returns the current logged-in user (if any).
    def current_user
-    if cookies[:todo_id]
-      User.find_by(id: cookies[:todo_id])
+    if cookies[:todo_user_id]
+      User.find_by(id: cookies[:todo_user_id])
     end
   end
 

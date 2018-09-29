@@ -11,12 +11,12 @@ class ActiveSupport::TestCase
 
   # Log in as a particular user.
   def log_in_as(user)
-    cookies[:todo_id] = user.id
+    cookies[:todo_user_id] = user.id
   end
 
   # Returns true if a test user is logged in.
   def is_logged_in?
-    !cookies[:todo_id].blank?
+    !cookies[:todo_user_id].blank?
   end
 
   # Minittest::Reporters::SpecReporter shows Test Classes & Test Names with Times

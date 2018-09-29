@@ -1,6 +1,3 @@
-<%# _task Partial is meant to be rendered within a table so that each task is a <tr> row.  %>
-<%# Set :show_list_name=true if you want the optional first cell showing the list's name.  %>
-
 <tr>
   <% if local_assigns.has_key? :show_list_name %>
     <td><%= task.list.name %></td>
