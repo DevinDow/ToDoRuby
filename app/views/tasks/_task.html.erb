@@ -1,3 +1,5 @@
+<%= react_component("Task", { task: task }) %>
+
 <tr>
   <% if local_assigns.has_key? :show_list_name %>
     <td><%= task.list.name %></td>
