@@ -10,8 +10,6 @@
   (SHARED WITH: <%= @other_users %>)
 <% end %>
 
-<table>
-  <%= render list.tasks %>
-</table>
+<%= render list.tasks %>
 
 <%= button_to 'New Task', new_list_task_path(list), options = { method: :get } %>

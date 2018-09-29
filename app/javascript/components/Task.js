@@ -4,7 +4,9 @@ class Task extends React.Component {
   render () {
     return (
       <React.Fragment>
-        Task name = : {this.props.task.name}
+        {this.props.task.priority}
+        <input type="checkbox"/>
+        {this.props.task.name}
       </React.Fragment>
     );
   }
