@@ -1,16 +1,34 @@
 import React from "react"
 import PropTypes from "prop-types"
 class Task extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      editable: false
+    }
+    this.handleEdit = this.handleEdit.bind(this);
+  }
+
+  handleEdit() {
+    this.setState({editable: !this.state.editable})
+  }
+
   render () {
+    let priority = this.state.editable ? <input class="priority" type="number" defaultValue={this.props.task.priority} /> : <span class="priority">{this.props.task.priority}</span>;
+    let done = this.state.editable ? <input class="done" type="checkbox" defaultValue={this.props.task.done} /> : <input class="done" type="checkbox" checked={this.props.task.done} disabled />;
+    let name = this.state.editable ? <input class="name" type="text" defaultValue={this.props.task.name} /> : <span class="name">{this.props.task.name}</span>;
     return (
-      <React.Fragment>
-        <input class="priority" type="number" value={this.props.task.priority} />
-        <input type="checkbox" checked={this.props.task.done} />
-        <input class="name" type="text" value={this.props.task.name} />
-        <input type="submit" value="Delete Task" />
-      </React.Fragment>
+      <div class="task">
+        {priority}
+        {done}
+        {name}
+        <button onClick={() => this.handleEdit()}>{this.state.editable? 'Submit' : 'Edit'}</button>
+        <button>Delete</button>
+      </div>
     );
   }
+
 }
 
 Task.propTypes = {
