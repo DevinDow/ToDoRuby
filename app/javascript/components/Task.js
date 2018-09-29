@@ -6,7 +6,7 @@ class Task extends React.Component {
       <React.Fragment>
         {this.props.task.priority}
         <input type="checkbox" checked={this.props.task.done} />
-        {this.props.task.name}
+        <input type="text" value={this.props.task.name} />
       </React.Fragment>
     );
   }
