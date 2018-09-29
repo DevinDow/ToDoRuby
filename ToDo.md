@@ -2,8 +2,6 @@
 
 ## Issues
 
-- running posgresql locally
-
 ## TODO
 
 - if no Lists then put some text: "Please create a new List to get started" or create User should add a DB?
@@ -15,10 +13,12 @@
     - protect non-owner Lists & their Tasks
   - change List Name updates Owner when more than one Owner, or Name propogated to Owner?
 - Users
+  - show user.name in 
   - password reset?
 - Views
-  - single-page app?
-    - editable **Task** with "+" button to update & refresh
+  - single-page app at home#index
+    - editable **Task**
+      - use ReactJS
       - use [AJAX](https://docs.google.com/document/d/1wDGbrMNZcC9fNPRmIvftnUF0gO9Ref1QsbdODm0KF-Y/edit#) for modifying/adding a Task
       - https://m.patrikonrails.com/do-you-really-need-that-fancy-javascript-framework-e6f2531f8a38
 - Models
@@ -27,12 +27,8 @@
   - [Validation](https://edgeguides.rubyonrails.org/active_record_validations.html)
 - Features
   - Move a **Task** to another **List**
-- Tests
-  - [Rails Guides on Testing](https://guides.rubyonrails.org/testing.html)
-  - [Scneems on Testing](https://github.com/schneems/reddit_on_rails/blob/master/part_three.md#testing)
 
 ## Consider
 
-- Document design decisions in the README
-- Host on Heroku
+- Heroku
   - DB: ephemeral vs AWS S3
