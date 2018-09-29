@@ -1,4 +1,1 @@
 <%= react_component("Task", { task: task }) %>
-
-<%= button_to 'Edit Task', edit_task_path(task), options = { method: :get } %>
-<%= button_to 'Delete Task', task, options = { method: :delete, data: { confirm: 'Are you sure?' } } %>

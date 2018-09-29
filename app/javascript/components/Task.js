@@ -4,9 +4,10 @@ class Task extends React.Component {
   render () {
     return (
       <React.Fragment>
-        {this.props.task.priority}
+        <input class="priority" type="number" value={this.props.task.priority} />
         <input type="checkbox" checked={this.props.task.done} />
-        <input type="text" value={this.props.task.name} />
+        <input class="name" type="text" value={this.props.task.name} />
+        <input type="submit" value="Delete Task" />
       </React.Fragment>
     );
   }
