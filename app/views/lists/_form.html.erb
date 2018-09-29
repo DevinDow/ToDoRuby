@@ -23,7 +23,10 @@
         <td><strong><%= form.text_field :name %></strong></td>
         <td><strong><%= form.check_box :use_timeframe %></strong></td>
         <td><%= form.submit %></td>
-      </tr>
+        <% if !@list.new_record? %>
+          <td><%= button_to 'Delete List', @list, options = { method: :delete, data: { confirm: 'Are you sure?' } } %></td>
+        <% end %>
+        </tr>
     </tbody>
   </table>
 
