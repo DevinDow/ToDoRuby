@@ -1,3 +1,5 @@
+<%= react_component("HelloWorld", { greeting: "Hello World from react-rails." }) %>
+
 <% @lists.each do |list| %>
   <h2><%= link_to list.name, list_path(list) %></h2>
   <% if !@other_users_per_list[list.id].blank? %>
@@ -15,5 +17,3 @@
 <% end %>
 
 <%= button_to 'New List', new_list_path, options = { method: :get } %>
-
-<%= react_component("HelloWorld", { greeting: "Hello from react-rails." }) %>
