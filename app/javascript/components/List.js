@@ -18,6 +18,7 @@ class List extends React.Component {
       <div class="list">
         <h3>{this.state.list.name}</h3>
         <ListTasks list={this.state.list} />
+        <a href={Routes.new_list_task_path(this.state.list)}>New Task</a>
       </div>
     );
   }
