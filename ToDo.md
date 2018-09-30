@@ -2,6 +2,7 @@
 
 ## Issues
 - single-page app at home#index using ReactJS
+  - heroku: Routes is not defined in Main React Component (\app\javascript\components\Main.js line 16)
   - show SHARED_WITH on each List
   - add "key" and fix other client-side console warnings
   - allow Task.done checkbox to be modified without first hitting the Edit button
