@@ -17,10 +17,17 @@ class Task extends React.Component {
 
   handleDelete() {
     console.log('DELETING ' + this.props.task.id)
+
+    this.token = $('meta[name="csrf-token"]').attr('content');
+    console.log('token = ' + this.token)
+
     fetch(Routes.task_path(this.props.task.id), 
     {
       method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': this.token
+    }
     }).then((response) => { 
         // filter out Task
       })
