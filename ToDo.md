@@ -4,7 +4,6 @@
 
 ## TODO
 
-- if no Lists then put some text: "Please create a new List to get started" or create User should add initial List to DB?
 - Owners
   - Share adds to Owner
     - list users?  or send email?
