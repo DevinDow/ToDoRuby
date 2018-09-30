@@ -12,11 +12,30 @@ class Task extends React.Component {
   }
 
   handleEdit() {
+    if (this.state.editable) {
+      console.log('UPDATING Task ' + this.props.task.id)
+
+      this.token = $('meta[name="csrf-token"]').attr('content');
+      console.log('token = ' + this.token)
+  
+      fetch(Routes.task_path(this.props.task.id), 
+      {
+        method: 'PUT',
+        body: JSON.stringify({task: this.props.task}),
+        headers: { 
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': this.token
+        }
+      }).then((response) => { 
+        console.log(response);
+        // update Task in UI
+      })
+      }
     this.setState({editable: !this.state.editable})
   }
 
   handleDelete() {
-    console.log('DELETING ' + this.props.task.id)
+    console.log('DELETING Task ' + this.props.task.id)
 
     this.token = $('meta[name="csrf-token"]').attr('content');
     console.log('token = ' + this.token)
@@ -27,10 +46,11 @@ class Task extends React.Component {
       headers: { 
         'Content-Type': 'application/json',
         'X-CSRF-Token': this.token
-    }
+      }
     }).then((response) => { 
-        // filter out Task
-      })
+      console.log(response);
+      // filter out Task
+    })
   }
 
   render () {
