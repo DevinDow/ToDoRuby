@@ -10,6 +10,8 @@ class ListTasks extends React.Component {
       list: props.list,
       tasks: []
     };
+    this.handleEdit = this.handleEdit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount(){
@@ -17,6 +19,56 @@ class ListTasks extends React.Component {
     fetch(Routes.list_tasks_path(this.props.list.id) + '.json')
       .then((response) => {return response.json()})
       .then((data) => {this.setState({ tasks: data }) });
+  }
+
+  handleEdit(id) {
+    if (this.state.editable) {
+      console.log('UPDATING Task ' + id)
+
+      this.token = $('meta[name="csrf-token"]').attr('content');
+      console.log('token = ' + this.token)
+  
+      fetch(Routes.task_path(id) + '.json', 
+      {
+        method: 'PUT',
+        body: JSON.stringify({task: {
+          priority: this.priority.value, 
+          done: this.done.checked, 
+          name: this.name.value
+        }}),
+        headers: { 
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': this.token
+        }
+      }).then((response) => { 
+        console.log(response);
+        // update Task in UI
+      })
+      }
+    this.setState({editable: !this.state.editable})
+  }
+
+  handleDelete(id) {
+    console.log('DELETING Task ' + id)
+
+    this.token = $('meta[name="csrf-token"]').attr('content');
+    console.log('token = ' + this.token)
+
+    fetch(Routes.task_path(id) + '.json', 
+    {
+      method: 'DELETE',
+      headers: { 
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': this.token
+      }
+    }).then((response) => { 
+      console.log(response);
+      // filter out deleted Task
+      let newTasks = this.state.tasks.filter((task) => task.id !== id)
+      this.setState({
+        tasks: newTasks
+      })
+    })
   }
 
   render () {
@@ -28,7 +80,7 @@ class ListTasks extends React.Component {
         {
           this.state.tasks.map((task) => {
             return(
-              <Task task={task} />
+              <Task task={task} handleDelete={this.handleDelete} handleEdit={this.handleEdit} />
             )
           })
         }

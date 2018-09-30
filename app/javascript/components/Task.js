@@ -7,54 +7,6 @@ class Task extends React.Component {
     this.state = {
       editable: false
     }
-    this.handleEdit = this.handleEdit.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
-  }
-
-  handleEdit() {
-    if (this.state.editable) {
-      console.log('UPDATING Task ' + this.props.task.id)
-
-      this.token = $('meta[name="csrf-token"]').attr('content');
-      console.log('token = ' + this.token)
-  
-      fetch(Routes.task_path(this.props.task.id) + '.json', 
-      {
-        method: 'PUT',
-        body: JSON.stringify({task: {
-          priority: this.priority.value, 
-          done: this.done.checked, 
-          name: this.name.value
-        }}),
-        headers: { 
-          'Content-Type': 'application/json',
-          'X-CSRF-Token': this.token
-        }
-      }).then((response) => { 
-        console.log(response);
-        // update Task in UI
-      })
-      }
-    this.setState({editable: !this.state.editable})
-  }
-
-  handleDelete() {
-    console.log('DELETING Task ' + this.props.task.id)
-
-    this.token = $('meta[name="csrf-token"]').attr('content');
-    console.log('token = ' + this.token)
-
-    fetch(Routes.task_path(this.props.task.id) + '.json', 
-    {
-      method: 'DELETE',
-      headers: { 
-        'Content-Type': 'application/json',
-        'X-CSRF-Token': this.token
-      }
-    }).then((response) => { 
-      console.log(response);
-      // filter out Task
-    })
   }
 
   render () {
@@ -67,8 +19,8 @@ class Task extends React.Component {
         {priority}
         {done}
         {name}
-        <button onClick={() => this.handleEdit()}>{this.state.editable? 'Submit' : 'Edit'}</button>
-        <button onClick={() => this.handleDelete()} data-confirm="Are you sure?">Delete</button>
+        <button onClick={() => this.props.handleEdit()}>{this.state.editable? 'Submit' : 'Edit'}</button>
+        <button onClick={() => this.props.handleDelete(this.props.task.id)} data-confirm="Are you sure?">Delete</button>
       </div>
     );
   }

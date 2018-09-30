@@ -15,7 +15,7 @@ class List extends React.Component {
     console.log("List.render() list.name=" + this.state.list.name);
     console.log("List.render() list.tasks=" + this.state.list.tasks);
     return (
-      <div class="list">
+      <div>
         <h2><a href={Routes.list_path(this.state.list)}>{this.state.list.name}</a></h2>
         <ListTasks list={this.state.list} />
         <a href={Routes.new_list_task_path(this.state.list)}>New Task</a>
