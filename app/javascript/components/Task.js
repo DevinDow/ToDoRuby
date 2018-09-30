@@ -64,7 +64,7 @@ class Task extends React.Component {
     let name = this.state.editable ? <input class="name" type="text" ref={input => this.name = input} defaultValue={this.props.task.name} /> : <span class="name">{this.props.task.name}</span>;
     return (
       <div class="task">
-        <h4>Task React Component</h4>
+        <h5>Task React Component</h5>
         {priority}
         {done}
         {name}

@@ -17,11 +17,13 @@ class MyLists extends React.Component {
     return (
       <React.Fragment>
         <h2>MyLists React Component</h2>
-        {this.state.my_lists.map((list) => {
-          return(
-            <List list={list} />
-          )
-        })}
+        {
+          this.state.my_lists.map((list) => {
+            return(
+              <List list={list} />
+            )
+          })
+        }
       </React.Fragment>
     );
   }

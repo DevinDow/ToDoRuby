@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Task from "./Task";
-import HelloWorld from "./HelloWorld";
+import ListTasks from "./ListTasks";
 class List extends React.Component {
 
   constructor(props) {
@@ -13,11 +12,12 @@ class List extends React.Component {
   }
 
   render () {
-    console.log("List.render()");
+    console.log("List.render() list.name=" + this.state.list.name);
+    console.log("List.render() list.tasks=" + this.state.list.tasks);
     return (
       <div class="list">
         <h3>{this.state.list.name}</h3>
-        <HelloWorld greeting="Hello List" />
+        <ListTasks list={this.state.list} />
       </div>
     );
   }
