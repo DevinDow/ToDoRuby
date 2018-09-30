@@ -8,10 +8,22 @@ class Task extends React.Component {
       editable: false
     }
     this.handleEdit = this.handleEdit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleEdit() {
     this.setState({editable: !this.state.editable})
+  }
+
+  handleDelete() {
+    console.log('DELETING ' + this.props.task.id)
+    fetch(Routes.task_path(this.props.task.id), 
+    {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' }
+    }).then((response) => { 
+        // filter out Task
+      })
   }
 
   render () {
@@ -24,7 +36,7 @@ class Task extends React.Component {
         {done}
         {name}
         <button onClick={() => this.handleEdit()}>{this.state.editable? 'Submit' : 'Edit'}</button>
-        <button>Delete</button>
+        <button onClick={() => this.handleDelete()} data-confirm="Are you sure?">Delete</button>
       </div>
     );
   }

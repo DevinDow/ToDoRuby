@@ -4,6 +4,7 @@
 
 ## TODO
 
+- button on List to delete all Tasks that are done
 - if no Lists then put some text: "Please create a new List to get started" or create User should add initial List to DB?
 - Owners
   - Share adds to Owner
