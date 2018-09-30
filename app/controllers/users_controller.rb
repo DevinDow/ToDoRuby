@@ -23,7 +23,9 @@ class UsersController < ApplicationController
       if @user.save
         format.html do 
           log_in @user
-          redirect_to @user, notice: 'User was successfully created.'
+          list = List.create(:name => "Tasks")  # create the first list
+          @user.owners.create(list_id: list.id)  # add list to owners table
+          redirect_to root_path, notice: 'User was successfully created.'
         end
         format.json { render :show, status: :created, location: @user }
       else

@@ -5,7 +5,6 @@
 ## TODO
 
 - button on List to delete all Tasks that are done
-- if no Lists then put some text: "Please create a new List to get started" or create User should add initial List to DB?
 - Owners
   - Share adds to Owner
     - list users?  or send email?
@@ -14,7 +13,6 @@
     - protect non-owner Lists & their Tasks
   - change List Name updates Owner when more than one Owner, or Name propogated to Owner?
 - Users
-  - show user.name in 
   - password reset?
 - Views
   - single-page app at home#index
