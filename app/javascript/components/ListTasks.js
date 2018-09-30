@@ -25,7 +25,6 @@ class ListTasks extends React.Component {
     console.log("ListTasks.render() tasks=" + this.state.tasks);
     return (
       <React.Fragment>
-        <h4>ListTasks React Component for {this.state.list.name}</h4>
         {
           this.state.tasks.map((task) => {
             return(

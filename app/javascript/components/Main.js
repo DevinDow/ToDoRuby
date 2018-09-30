@@ -12,8 +12,7 @@ class Main extends React.Component {
     console.log("Main.render()");
     return (
       <React.Fragment>
-        <h1>Main React Component</h1>
-        <MyLists />
+        <MyLists my_lists={this.props.my_lists} />
       </React.Fragment>
     );
   }
