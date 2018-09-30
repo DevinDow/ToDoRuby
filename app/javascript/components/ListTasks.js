@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import Task from "./Task";
 class ListTasks extends React.Component {
 
   constructor(props) {
@@ -28,7 +29,7 @@ class ListTasks extends React.Component {
         {
           this.state.tasks.map((task) => {
             return(
-              <h5>{task.name}</h5>
+              <Task task={task} />
             )
           })
         }
