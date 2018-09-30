@@ -6,7 +6,6 @@ class ListsController < ApplicationController
   # GET /lists.json
   def index
     @lists = current_user.lists
-    puts lists.inspect
   end
 
   # GET /lists/1

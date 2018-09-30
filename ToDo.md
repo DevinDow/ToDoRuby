@@ -1,5 +1,8 @@
 # ToDo
 
+- need to fetch Lists & Tasks in JS
+  - can pass @my_lists, but they don't have tasks
+
 ## Issues
 
 ## TODO

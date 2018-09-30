@@ -1,12 +1,23 @@
 class TasksController < ApplicationController
   before_action :require_logged_in_user
-  before_action :set_list, only: [:new, :create]
-  before_action :set_task, only: [:edit, :update, :destroy]
+  before_action :set_list, only: [:index, :new, :create]
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
 
-  # GET /tasks
-  # GET /tasks.json
-  def index
+  # GET /tasks/all
+  # GET /tasks/all.json
+  def all
     @tasks = Task.includes(:list).joins(:list).select("tasks.*, lists.name as listname").order("listname", :priority).all
+  end
+
+  # GET /lists/:list_id/tasks
+  # GET /lists/:list_id/tasks.json
+  def index
+    @tasks = @list.tasks.order(:priority).all
+  end
+
+  # GET /tasks/1
+  # GET /tasks/1.json
+  def show
   end
 
   # GET /lists/:list_id/tasks/new
