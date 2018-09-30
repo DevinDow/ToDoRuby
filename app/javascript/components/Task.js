@@ -21,7 +21,11 @@ class Task extends React.Component {
       fetch(Routes.task_path(this.props.task.id), 
       {
         method: 'PUT',
-        body: JSON.stringify({task: this.props.task}),
+        body: JSON.stringify({task: {
+          priority: this.priority.value, 
+          done: this.done.checked, 
+          name: this.name.value
+        }}),
         headers: { 
           'Content-Type': 'application/json',
           'X-CSRF-Token': this.token
@@ -54,9 +58,9 @@ class Task extends React.Component {
   }
 
   render () {
-    let priority = this.state.editable ? <input class="priority" type="number" defaultValue={this.props.task.priority} /> : <span class="priority">{this.props.task.priority}</span>;
-    let done = this.state.editable ? <input class="done" type="checkbox" defaultValue={this.props.task.done} /> : <input class="done" type="checkbox" checked={this.props.task.done} disabled />;
-    let name = this.state.editable ? <input class="name" type="text" defaultValue={this.props.task.name} /> : <span class="name">{this.props.task.name}</span>;
+    let priority = this.state.editable ? <input class="priority" type="number" ref={input => this.priority = input} defaultValue={this.props.task.priority} /> : <span class="priority">{this.props.task.priority}</span>;
+    let done = this.state.editable ? <input class="done" type="checkbox" ref={input => this.done = input} defaultValue={this.props.task.done} /> : <input class="done" type="checkbox" checked={this.props.task.done} disabled />;
+    let name = this.state.editable ? <input class="name" type="text" ref={input => this.name = input} defaultValue={this.props.task.name} /> : <span class="name">{this.props.task.name}</span>;
     return (
       <div class="task">
         {priority}
