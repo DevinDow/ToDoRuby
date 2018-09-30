@@ -25,6 +25,7 @@
   - [Validation](https://edgeguides.rubyonrails.org/active_record_validations.html)
 - Features
   - Move a **Task** to another **List**
+  - button on List to delete all Tasks that are done
 
 ## Consider
 
