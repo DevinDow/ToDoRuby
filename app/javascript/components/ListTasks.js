@@ -10,7 +10,7 @@ class ListTasks extends React.Component {
       list: props.list,
       tasks: []
     };
-    this.handleEdit = this.handleEdit.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
 
@@ -21,31 +21,24 @@ class ListTasks extends React.Component {
       .then((data) => {this.setState({ tasks: data }) });
   }
 
-  handleEdit(id) {
-    if (this.state.editable) {
-      console.log('UPDATING Task ' + id)
+  handleUpdate(task) {
+    console.log('UPDATING Task ' + task.id)
 
       this.token = $('meta[name="csrf-token"]').attr('content');
       console.log('token = ' + this.token)
   
-      fetch(Routes.task_path(id) + '.json', 
-      {
-        method: 'PUT',
-        body: JSON.stringify({task: {
-          priority: this.priority.value, 
-          done: this.done.checked, 
-          name: this.name.value
-        }}),
-        headers: { 
-          'Content-Type': 'application/json',
-          'X-CSRF-Token': this.token
-        }
-      }).then((response) => { 
-        console.log(response);
-        // update Task in UI
-      })
+    fetch(Routes.task_path(task.id) + '.json', 
+    {
+      method: 'PUT',
+      body: JSON.stringify({task: task}),
+      headers: { 
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': this.token
       }
-    this.setState({editable: !this.state.editable})
+    }).then((response) => { 
+      console.log(response);
+      // update Task in UI
+    })
   }
 
   handleDelete(id) {
@@ -80,7 +73,7 @@ class ListTasks extends React.Component {
         {
           this.state.tasks.map((task) => {
             return(
-              <Task task={task} handleDelete={this.handleDelete} handleEdit={this.handleEdit} />
+              <Task task={task} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} />
             )
           })
         }
