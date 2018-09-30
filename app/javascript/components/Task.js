@@ -18,7 +18,7 @@ class Task extends React.Component {
       this.token = $('meta[name="csrf-token"]').attr('content');
       console.log('token = ' + this.token)
   
-      fetch(Routes.task_path(this.props.task.id), 
+      fetch(Routes.task_path(this.props.task.id) + '.json', 
       {
         method: 'PUT',
         body: JSON.stringify({task: {
@@ -44,7 +44,7 @@ class Task extends React.Component {
     this.token = $('meta[name="csrf-token"]').attr('content');
     console.log('token = ' + this.token)
 
-    fetch(Routes.task_path(this.props.task.id), 
+    fetch(Routes.task_path(this.props.task.id) + '.json', 
     {
       method: 'DELETE',
       headers: { 
