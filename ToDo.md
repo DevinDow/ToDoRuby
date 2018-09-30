@@ -4,6 +4,11 @@
 
 ## TODO
 
+- Sort Lists
+  - if list's name only comes from Owner table then can easily sort in user.rb: 
+    - has_many :owners, dependent: :destroy, -> { order(:my_list_name)}
+    - lists#create() needs to set name when creating owner
+    - edit list will need to join owner table?
 - Owners
   - Share adds to Owner
     - list users?  or send email?
