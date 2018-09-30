@@ -1,11 +1,11 @@
 <h2><%= link_to list.name, edit_list_path(list) %></h2>
 
-<% if @other_users_per_list %>
-  <% @other_users = @other_users_per_list[list.id] %>
+<% if @sharees_per_list %>
+  <% @sharees = @sharees_per_list[list.id] %>
 <% end %>
 
-<% if !@other_users.blank? %>
-  (SHARED WITH: <%= @other_users %>)
+<% if !@sharees.blank? %>
+  (SHARED WITH: <%= @sharees %>)
 <% end %>
 
 <table>

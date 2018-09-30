@@ -4,10 +4,10 @@ class HomeController < ApplicationController
   # GET /
   def index
     @lists = current_user.lists
-    @other_users_per_list = Hash[
+    @sharees_per_list = Hash[
       @lists.map do |list|
-        other_users = list.owners.select{|owner| owner.user != current_user}.map{|owner| owner.user.name}.join(', ')
-        [list.id, other_users]
+        sharees = list.owners.select{|owner| owner.user != current_user}.map{|owner| owner.user.name}.join(', ')
+        [list.id, sharees]
       end
     ]
   end
