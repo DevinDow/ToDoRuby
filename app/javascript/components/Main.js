@@ -13,6 +13,7 @@ class Main extends React.Component {
     return (
       <React.Fragment>
         <MyLists my_lists={this.props.my_lists} />
+        <a href={Routes.new_list_path()}>New List</a>
       </React.Fragment>
     );
   }
