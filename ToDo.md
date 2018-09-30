@@ -1,6 +1,12 @@
 # ToDo
 
 ## Issues
+- single-page app at home#index using ReactJS
+  - heroku: Routes is not defined in Main React Component (\app\javascript\components\Main.js line 16)
+  - show SHARED_WITH on each List
+  - add "key" and fix other client-side console warnings
+  - allow Task.done checkbox to be modified without first hitting the Edit button
+  - implement new Task/List in React using a form?
 
 ## TODO
 
@@ -18,12 +24,6 @@
   - change List Name updates Owner when more than one Owner, or Name propogated to Owner?
 - Users
   - password reset?
-- Views
-  - single-page app at home#index
-    - editable **Task**
-      - use ReactJS
-      - use [AJAX](https://docs.google.com/document/d/1wDGbrMNZcC9fNPRmIvftnUF0gO9Ref1QsbdODm0KF-Y/edit#) for modifying/adding a Task
-      - https://m.patrikonrails.com/do-you-really-need-that-fancy-javascript-framework-e6f2531f8a38
 - Models
   - **Timeframes**
     - default: false

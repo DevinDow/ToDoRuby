@@ -17,11 +17,9 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   # Lists & Tasks
-  get 'tasks', to: 'tasks#index', as: 'tasks'  # index of all Tasks, not just those of one List
-
+  get 'tasks', to: 'tasks#all'
   resources :lists do
-    resources :tasks, shallow: true, :except => [:index, :show]
+    resources :tasks, shallow: true
   end
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

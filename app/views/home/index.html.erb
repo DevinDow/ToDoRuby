@@ -1,7 +1,1 @@
-<%= react_component("HelloWorld", { greeting: "Hello World from react-rails." }) %>
-
-<%= render @lists %>
-
-<hr/>
-
-<%= button_to 'New List', new_list_path, options = { method: :get } %>
+<%= react_component('Main', my_lists: @lists) %>

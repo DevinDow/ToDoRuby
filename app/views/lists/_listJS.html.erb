@@ -1,0 +1,13 @@
+<%= react_component("List", { list: list }) %>
+
+<% if @sharees_per_list %>
+  <% @sharees = @sharees_per_list[list.id] %>
+<% end %>
+
+<% if !@sharees.blank? %>
+  (SHARED WITH: <%= @sharees %>)
+<% end %>
+
+<%= render list.tasks %>
+
+<%= button_to 'New Task', new_list_task_path(list), options = { method: :get } %>

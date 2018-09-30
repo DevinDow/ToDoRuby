@@ -1,5 +1,7 @@
-<h2>All Tasks</h2>
+<h1><%= @list.name %> Tasks</h1>
 
 <table>
-  <%= render @tasks, show_list_name: true %>
+  <%= render @tasks %>
 </table>
+
+<%= button_to 'New Task', new_list_task_path, options = { method: :get } %>
