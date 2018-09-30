@@ -1,1 +1,10 @@
-<%= react_component("Task", { task: task }) %>
+<tr>
+  <% if local_assigns.has_key? :show_list_name %>
+    <td><%= task.list.name %></td>
+  <% end %>
+  <td><input type="checkbox" <%= task.done? ? "checked" : "" %> onclick="myFunction()"></td>
+  <td><%= task.priority %></td>
+  <td><%= task.name %></td>
+  <td><%= button_to 'Edit', edit_task_path(task), options = { method: :get } %></td>
+  <td><%= button_to 'X', task, options = { method: :delete, data: { confirm: 'Are you sure?' } } %></td>
+</tr>

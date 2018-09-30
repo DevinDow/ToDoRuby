@@ -12,9 +12,11 @@ class User < ApplicationRecord
 
   
   def lists
-    owners.map do |owner|
+    lists = owners.map do |owner|
       owner.list
     end  
+    puts lists.inspect
+    lists
   end
 
 

@@ -5,7 +5,8 @@ class ListsController < ApplicationController
   # GET /lists
   # GET /lists.json
   def index
-    @lists = List.order(:name).all
+    @lists = current_user.lists
+    puts lists.inspect
   end
 
   # GET /lists/1

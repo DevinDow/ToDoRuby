@@ -1,4 +1,4 @@
-<h2><%= link_to list.name, edit_list_path(list) %></h2>
+<%= react_component("List", { list: list }) %>
 
 <% if @sharees_per_list %>
   <% @sharees = @sharees_per_list[list.id] %>
@@ -8,8 +8,6 @@
   (SHARED WITH: <%= @sharees %>)
 <% end %>
 
-<table>
-  <%= render list.tasks %>
-</table>
+<%= render list.tasks %>
 
 <%= button_to 'New Task', new_list_task_path(list), options = { method: :get } %>
