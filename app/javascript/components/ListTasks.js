@@ -37,8 +37,14 @@ class ListTasks extends React.Component {
       }
     }).then((response) => { 
       console.log(response);
+
       // update Task in UI
-    })
+      let newTasks = this.state.tasks.filter((t) => t.id !== task.id)
+      newTasks.push(task)
+      this.setState({
+        tasks: newTasks
+      })
+      })
   }
 
   handleDelete(id) {
