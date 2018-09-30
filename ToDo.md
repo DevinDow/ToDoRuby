@@ -1,6 +1,10 @@
 # ToDo
 
 ## Issues
+- single-page app at home#index using ReactJS
+  - List name should link to /lists/:id
+  - need to re-fetch Tasks after edit
+  - should JS fetch My Lists or keep having Controller pass it?
 
 ## TODO
 
@@ -13,12 +17,6 @@
   - change List Name updates Owner when more than one Owner, or Name propogated to Owner?
 - Users
   - password reset?
-- Views
-  - single-page app at home#index
-    - editable **Task**
-      - use ReactJS
-      - use [AJAX](https://docs.google.com/document/d/1wDGbrMNZcC9fNPRmIvftnUF0gO9Ref1QsbdODm0KF-Y/edit#) for modifying/adding a Task
-      - https://m.patrikonrails.com/do-you-really-need-that-fancy-javascript-framework-e6f2531f8a38
 - Models
   - **Timeframes**
     - default: false
