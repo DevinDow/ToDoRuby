@@ -2,7 +2,7 @@
 
 ## Issues
 - single-page app at home#index using ReactJS
-  - List name should link to /lists/:id
+  - show SHARED_WITH on each List
   - need to re-fetch Tasks after edit
   - should JS fetch My Lists or keep having Controller pass it?
 

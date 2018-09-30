@@ -10,8 +10,13 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     @task1a = tasks(:task1a)
   end
 
-  test "should get index" do
+  test "should get all" do
     get tasks_url
+    assert_response :success
+  end
+
+  test "should get index" do
+    get list_tasks_url(@empty_list)
     assert_response :success
   end
 
@@ -26,6 +31,11 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to list_url(@empty_list)
+  end
+
+  test "should show task" do
+    get task_url(@task1a)
+    assert_response :success
   end
 
   test "should get edit" do
