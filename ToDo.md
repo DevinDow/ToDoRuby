@@ -7,7 +7,6 @@
   - add "key" and fix other client-side console warnings
   - allow Task.done checkbox to be modified without first hitting the Edit button
   - implement new Task/List in React using a form?
-  - should JS fetch My Lists or keep having Controller pass it?
 
 ## TODO
 
