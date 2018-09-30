@@ -5,7 +5,7 @@
     <div class="title_block">
       <%= link_to root_path do %>
         <%= image_tag('check.ico', size: '16', class: 'icon', alt: 'ToDo') %>
-        <%= content_tag(:span, "Devin's ToDos", class: 'title') %>
+        <%= content_tag(:span, logged_in? ? current_user.name + "'s ToDos" : "ToDos", class: 'title') %>
       <% end %>
     </div>
 

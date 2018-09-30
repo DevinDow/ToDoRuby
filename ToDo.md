@@ -13,7 +13,6 @@
     - protect non-owner Lists & their Tasks
   - change List Name updates Owner when more than one Owner, or Name propogated to Owner?
 - Users
-  - show user.name in 
   - password reset?
 - Views
   - single-page app at home#index
