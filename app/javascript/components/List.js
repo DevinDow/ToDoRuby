@@ -3,9 +3,9 @@ import PropTypes from "prop-types"
 class List extends React.Component {
   render () {
     return (
-      <React.Fragment>
-        List name = {this.props.list.name}
-      </React.Fragment>
+      <div class="list">
+        <a href={Routes.edit_list_path(this.props.list)}><h1>{this.props.list.name}</h1></a>
+      </div>
     );
   }
 }

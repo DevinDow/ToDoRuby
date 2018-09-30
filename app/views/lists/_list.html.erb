@@ -1,7 +1,5 @@
 <%= react_component("List", { list: list }) %>
 
-<h2><%= link_to list.name, edit_list_path(list) %></h2>
-
 <% if @sharees_per_list %>
   <% @sharees = @sharees_per_list[list.id] %>
 <% end %>
