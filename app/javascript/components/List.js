@@ -16,7 +16,7 @@ class List extends React.Component {
     console.log("List.render()");
     return (
       <div class="list">
-        <h3>List React Component</h3>
+        <h3>{this.state.list.name}</h3>
         <HelloWorld greeting="Hello List" />
       </div>
     );

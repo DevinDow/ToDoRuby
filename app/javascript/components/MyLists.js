@@ -13,11 +13,15 @@ class MyLists extends React.Component {
   
   render () {
     console.log("MyLists.render() state.my_lists=" + this.state.my_lists);
+    console.log("MyLists.render() state.my_lists[0].name=" + this.state.my_lists[0].name);
     return (
       <React.Fragment>
         <h2>MyLists React Component</h2>
-        <List />
-        <List />
+        {this.state.my_lists.map((list) => {
+          return(
+            <List list={list} />
+          )
+        })}
       </React.Fragment>
     );
   }
