@@ -1,10 +1,11 @@
 # ToDo
 
 ## Issues
+
 - single-page app at home#index using ReactJS
+  - implement new Task/List in React using a form?
   - show SHARED_WITH on each List
   - fix client-side console warnings
-  - implement new Task/List in React using a form?
 
 ## TODO
 
