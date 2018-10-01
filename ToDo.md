@@ -4,7 +4,6 @@
 - single-page app at home#index using ReactJS
   - show SHARED_WITH on each List
   - fix client-side console warnings
-  - allow Task.done checkbox to be modified without first hitting the Edit button
   - implement new Task/List in React using a form?
 
 ## TODO
@@ -20,7 +19,7 @@
   - Delete removes from Owners
     - if there are no other owners then destroy List
     - protect non-owner Lists & their Tasks
-  - change List Name updates Owner when more than one Owner, or Name propogated to Owner?
+  - change List Name updates Owner when more than one Owner, or Name propogated to Owner, or Name only stored in Owner?
 - Users
   - password reset?
 - Models
