@@ -14,7 +14,10 @@ class User < ApplicationRecord
   def lists
     lists = owners.map do |owner|
       owner.list
-    end  
+    end
+    lists.sort! do |a,b|
+      a.name <=> b.name
+    end
     puts lists.inspect
     lists
   end
