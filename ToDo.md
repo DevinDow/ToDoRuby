@@ -2,16 +2,22 @@
 
 ## Issues
 
-- heroku
+- fix client-side console warnings locally & in heroku production
+
+- heroku - some things that work locally in develop are not working in heroku production.  I suspect one culprit is breaking all of these.
   - Account dropdown not working
+    - deploying 'before-React' did not fix it
+    - Uncaught TypeError: Cannot read property 'exclude' of undefined
+      - y.matches() @ application-a97__da10.js:formatted:37 =  return null != e.exclude ? n.call(t, e.selector) && !n.call(t, e.exclude) : n.call(t, e)
+      - anonymous @ application-a97__da10.js:formatted:128 =  for (e = t.target; e instanceof Element && !o(e, n); )
+  - jQuery not working in /app/javascript/components (first occurrence in Main.js React Component)
+  - js-Routes not working
+
+## TODO
 
 - single-page app at home#index using ReactJS
   - implement new Task/List in React using a form?
   - show SHARED_WITH on each List
-  - fix client-side console warnings
-
-## TODO
-
 - Sort Lists
   - if list's name only comes from Owner table then can easily sort in user.rb: 
     - has_many :owners, dependent: :destroy, -> { order(:my_list_name)}
