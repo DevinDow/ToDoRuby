@@ -16,7 +16,7 @@ class ListTasks extends React.Component {
 
   componentDidMount(){
     console.log("ListTasks.componentDidMount()");
-    fetch(Routes.list_tasks_path(this.props.list.id) + '.json')
+    fetch('/lists/' + this.props.list.id + '/tasks.json')
       .then((response) => {return response.json()})
       .then((data) => {this.setState({ tasks: data }) });
   }
@@ -27,7 +27,7 @@ class ListTasks extends React.Component {
       this.token = $('meta[name="csrf-token"]').attr('content');
       console.log('token = ' + this.token)
   
-    fetch(Routes.task_path(task.id) + '.json', 
+    fetch('/task/' + task.id + '.json', 
     {
       method: 'PUT',
       body: JSON.stringify({task: task}),
@@ -53,7 +53,7 @@ class ListTasks extends React.Component {
     this.token = $('meta[name="csrf-token"]').attr('content');
     console.log('token = ' + this.token)
 
-    fetch(Routes.task_path(id) + '.json', 
+    fetch('/tasks/' + id + '.json', 
     {
       method: 'DELETE',
       headers: { 
