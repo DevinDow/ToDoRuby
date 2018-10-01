@@ -79,7 +79,7 @@ class ListTasks extends React.Component {
         {
           this.state.tasks.map((task) => {
             return(
-              <Task task={task} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} />
+              <Task key={task.id} task={task} handleDelete={this.handleDelete} handleUpdate={this.handleUpdate} />
             )
           })
         }

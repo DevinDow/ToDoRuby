@@ -19,7 +19,7 @@ class MyLists extends React.Component {
         {
           this.state.my_lists.map((list) => {
             return(
-              <div>
+              <div key={list.id}>
                 <List list={list} />
                 <hr/>
               </div>
