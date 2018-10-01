@@ -14,8 +14,12 @@ class ListTasks extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     console.log("ListTasks.componentDidMount()");
+    this.fetchTasks()
+  }
+
+  fetchTasks() {
     fetch('/lists/' + this.props.list.id + '/tasks.json')
       .then((response) => {return response.json()})
       .then((data) => {this.setState({ tasks: data }) });
@@ -39,12 +43,8 @@ class ListTasks extends React.Component {
       console.log(response);
 
       // update Task in UI
-      let newTasks = this.state.tasks.filter((t) => t.id !== task.id)
-      newTasks.push(task)
-      this.setState({
-        tasks: newTasks
-      })
-      })
+      this.fetchTasks()
+    })
   }
 
   handleDelete(id) {
