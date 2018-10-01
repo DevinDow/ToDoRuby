@@ -14,6 +14,9 @@
       - anonymous @ application-a97__da10.js:formatted:128 =  for (e = t.target; e instanceof Element && !o(e, n); )
   - jQuery not working in /app/javascript/components (first occurrence in Main.js React Component)
   - js-Routes not working
+  PLAN: 
+    - try removing things until it works
+    - try a new heroku app (heroku create)
 
 ## TODO
 
