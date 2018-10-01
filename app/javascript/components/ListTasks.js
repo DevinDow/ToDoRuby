@@ -27,7 +27,7 @@ class ListTasks extends React.Component {
       this.token = $('meta[name="csrf-token"]').attr('content');
       console.log('token = ' + this.token)
   
-    fetch('/task/' + task.id + '.json', 
+    fetch('/tasks/' + task.id + '.json', 
     {
       method: 'PUT',
       body: JSON.stringify({task: task}),
