@@ -24,7 +24,7 @@ class ListTasks extends React.Component {
   handleUpdate(task) {
     console.log('UPDATING Task ' + task.id)
 
-      this.token = $('meta[name="csrf-token"]').attr('content');
+      this.token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
       console.log('token = ' + this.token)
   
     fetch('/tasks/' + task.id + '.json', 
