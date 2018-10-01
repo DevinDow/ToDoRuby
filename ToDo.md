@@ -2,6 +2,9 @@
 
 ## Issues
 
+- heroku
+  - Account dropdown not working
+
 - single-page app at home#index using ReactJS
   - implement new Task/List in React using a form?
   - show SHARED_WITH on each List
