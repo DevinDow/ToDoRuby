@@ -27,11 +27,11 @@ class Task extends React.Component {
 
   render () {
     console.log("Task.render()");
-    let priority = this.state.editable ? <input class="priority" type="number" ref={input => this.priority = input} defaultValue={this.props.task.priority} /> : <span class="priority">{this.props.task.priority}</span>;
-    let done = this.state.editable ? <input class="done" type="checkbox" ref={input => this.done = input} defaultValue={this.props.task.done} /> : <input class="done" type="checkbox" checked={this.props.task.done} disabled />;
-    let name = this.state.editable ? <input class="name" type="text" ref={input => this.name = input} defaultValue={this.props.task.name} /> : <span class="name">{this.props.task.name}</span>;
+    let priority = this.state.editable ? <input className="priority" type="number" ref={input => this.priority = input} defaultValue={this.props.task.priority} /> : <span className="priority">{this.props.task.priority}</span>;
+    let done = this.state.editable ? <input className="done" type="checkbox" ref={input => this.done = input} defaultValue={this.props.task.done} /> : <input className="done" type="checkbox" checked={this.props.task.done} disabled />;
+    let name = this.state.editable ? <input className="name" type="text" ref={input => this.name = input} defaultValue={this.props.task.name} /> : <span className="name">{this.props.task.name}</span>;
     return (
-      <div class="task">
+      <div className="task">
         {priority}
         {done}
         {name}
