@@ -2,6 +2,8 @@
 
 ## Issues
 
+- after updating a Task using React, Tasks should still be sorted by priority
+
 - fix client-side console warnings locally & in heroku production
 
 - heroku - some things that work locally in develop are not working in heroku production.  I suspect one culprit is breaking all of these.
