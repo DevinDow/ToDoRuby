@@ -24,7 +24,6 @@
 - `.done { color: rgba(0, 0, 0, 0.3); text-decoration: line-through; }` style for **Tasks** that are checked
 - single-page app at `home#index` using ReactJS
   - implement new **Task**/**List** in React using a form?
-  - show *SHARED WITH* on each **List**
 - Sort Lists
   - if **List's name** only comes from **Owner** table then can easily sort in *user.rb*: 
     - `has_many :owners, dependent: :destroy, -> { order(:my_list_name)}`
