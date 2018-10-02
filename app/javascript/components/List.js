@@ -103,11 +103,10 @@ class List extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="list">
         <h2><a href={`/lists/${this.props.list.id}`}>{this.props.list.name}</a></h2>
         <ListTasks list={this.props.list} tasks={this.state.tasks} handleUpdate={this.handleUpdate} handleDelete={this.handleDelete} fetchTasks={this.fetchTasks} />
         <NewTask list_id={this.props.list.id} handleCreate={this.handleCreate} fetchTasks={this.fetchTasks} />
-        <a href={`/lists/${this.props.list.id}/tasks/new`}>New Task</a>
       </div>
     );
   }
