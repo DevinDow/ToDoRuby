@@ -11,12 +11,13 @@ const MyLists = (props) => {
         props.my_lists.map((list) => {
           return(
             <div key={list.id}>
-              <List list={list} />
+              <List list={list} sharees={props.sharees_per_list[list.id]} />
               <hr/>
             </div>
           )
         })
       }
+      <a href='/lists/new'>New List</a>
     </React.Fragment>
   );
 }
