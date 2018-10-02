@@ -22,7 +22,4 @@ const MyLists = (props) => {
   );
 }
 
-MyLists.propTypes = {
-  lists: PropTypes.node
-};
 export default MyLists
