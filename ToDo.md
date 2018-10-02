@@ -5,6 +5,9 @@
 - fix client-side console warnings locally & in heroku production
 
 - heroku - some things that work locally in develop are not working in heroku production.  I suspect one culprit is breaking all of these.
+  - <a rel="nofollow" data-method="delete" href="/logout">Log out</a> is doing GET /logout
+  - console : Uncaught TypeError: Object.defineProperty called on non-object
+      - application-302__44.js:704 =  Object.defineProperty(e, "__esModule", {
   - Account dropdown not working
     - deploying 'before-React' did not fix it
     - Uncaught TypeError: Cannot read property 'exclude' of undefined
@@ -15,6 +18,7 @@
   PLAN: 
     - try removing things until it works
     - try a new heroku app (heroku create)
+    - what is diferent in PROD?
 
 ## TODO
 
