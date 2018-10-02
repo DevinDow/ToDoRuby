@@ -5,6 +5,7 @@ class Task extends React.Component {
   constructor(props) {
     super(props);
     console.log("Task " + props.task.id + " = " + props.task.name);
+    console.log(props)
     this.state = {
       editable: false
     }
