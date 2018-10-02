@@ -4,6 +4,7 @@ class Task extends React.Component {
 
   constructor(props) {
     super(props);
+    console.log("Task " + props.task.id + " = " + props.task.name);
     this.state = {
       editable: false
     }
@@ -38,7 +39,6 @@ class Task extends React.Component {
   }
 
   render () {
-    console.log("Task.render()");
     let priority = this.state.editable ? <input className="priority" type="number" ref={input => this.priority = input} defaultValue={this.props.task.priority} /> : <span className="priority">{this.props.task.priority}</span>;
     let name = this.state.editable ? <input className="name" type="text" ref={input => this.name = input} defaultValue={this.props.task.name} /> : <span className="name">{this.props.task.name}</span>;
     return (
@@ -54,7 +54,4 @@ class Task extends React.Component {
 
 }
 
-Task.propTypes = {
-  task: PropTypes.node
-};
 export default Task

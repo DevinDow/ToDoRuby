@@ -5,7 +5,8 @@ class ListTasks extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log("ListTasks.constructor() props.list=" + props.list);
+    console.log("ListTasks " + props.list.id + " = " + props.list.name);
+    console.log(props);
     this.state = {
       list: props.list,
       tasks: []
@@ -15,14 +16,19 @@ class ListTasks extends React.Component {
   }
 
   componentDidMount() {
-    console.log("ListTasks.componentDidMount()");
     this.fetchTasks()
   }
 
   fetchTasks() {
     fetch('/lists/' + this.props.list.id + '/tasks.json')
-      .then((response) => {return response.json()})
-      .then((data) => {this.setState({ tasks: data }) });
+      .then((response) => {
+        return response.json()
+      })
+      .then((data) => {
+        console.log("ListTasks " + this.props.list.id + " = " + this.props.list.name + " fetched " + data.length + " Task(s)");
+        console.log(data);
+        this.setState({ tasks: data }) 
+      });
   }
 
   handleUpdate(task) {
@@ -71,9 +77,6 @@ class ListTasks extends React.Component {
   }
 
   render () {
-    console.log("ListTasks.render() list.name=" + this.state.list.name);
-    console.log("ListTasks.render() list.tasks=" + this.state.list.tasks);
-    console.log("ListTasks.render() tasks=" + this.state.tasks);
     return (
       <React.Fragment>
         {
@@ -89,7 +92,4 @@ class ListTasks extends React.Component {
 
 }
 
-ListTasks.propTypes = {
-  list: PropTypes.node
-};
 export default ListTasks

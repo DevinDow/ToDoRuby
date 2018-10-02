@@ -9,7 +9,6 @@ const MyLists = (props) => {
     <React.Fragment>
       {
         props.my_lists.map((list) => {
-          console.log("MyLists list.id=" + list.id);
           return(
             <div key={list.id}>
               <List list={list} />

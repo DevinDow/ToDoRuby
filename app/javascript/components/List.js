@@ -3,7 +3,9 @@ import PropTypes from "prop-types"
 import ListTasks from "./ListTasks";
 const List = (props) => {
 
-  console.log("List Component - id " + props.list.id + " = " + props.list.name);
+  console.log("List " + props.list.id + " = " + props.list.name);
+  console.log(props);
+
   return (
     <div>
       <h2><a href={`/lists/${props.list.id}`}>{props.list.name}</a></h2>
