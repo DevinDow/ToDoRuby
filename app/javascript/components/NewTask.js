@@ -22,6 +22,7 @@ class NewTask extends React.Component {
       priority: this.priority.value, 
       name: this.name.value
     })
+    this.toggleCreating();
   }
 
   render() {
