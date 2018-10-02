@@ -18,18 +18,13 @@ class NewTask extends React.Component {
   }
 
   handleCreate() {
-    if (this.state.creating) {
-      this.props.handleUpdate({
-        priority: this.priority.value, 
-        name: this.name.value
-      })
-    }
-
-    // toggle creating
-    this.setState({creating: !this.state.creating})
+    this.props.handleCreate({
+      priority: this.priority.value, 
+      name: this.name.value
+    })
   }
 
-  render () {
+  render() {
     let priority = this.state.creating ? <input className="priority" type="number" ref={input => this.priority = input} /> : "";
     let name = this.state.creating ? <input className="name" type="text" ref={input => this.name = input} /> : "";
     let createButton = this.state.creating ? <button onClick={() => this.handleCreate()}>Create</button> : "";
