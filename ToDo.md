@@ -19,6 +19,8 @@
     - try a new heroku app (heroku create)
     - what is diferent in **PROD**?
 
+- Test not finding "SHARED WITH" in React Components.  Do I need a Test Framework that gets the results of React Components?
+
 ## TODO
 
 - `.done { color: rgba(0, 0, 0, 0.3); text-decoration: line-through; }` style for **Tasks** that are checked
