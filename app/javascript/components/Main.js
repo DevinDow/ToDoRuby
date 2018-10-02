@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import MyLists from "./MyLists";
 const Main = (props) => {
 
-  console.log("Main(" + props + ")");
+  console.log("Main Component - props.my_lists=" + props.my_lists);
 
   return (
     <React.Fragment>
