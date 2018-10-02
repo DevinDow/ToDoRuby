@@ -18,6 +18,10 @@
 
 ## TODO
 
+- .done {
+  color: rgba(0, 0, 0, 0.3);
+  text-decoration: line-through;
+}
 - single-page app at home#index using ReactJS
   - implement new Task/List in React using a form?
   - show SHARED_WITH on each List
