@@ -23,9 +23,12 @@
 
 ## TODO
 
-- `.done { color: rgba(0, 0, 0, 0.3); text-decoration: line-through; }` style for **Tasks** that are checked
+- style for **Tasks** that are checked = `.done { color: rgba(0, 0, 0, 0.3); text-decoration: line-through; }`
 - single-page app at `home#index` using ReactJS
-  - implement new **Task**/**List** in React using a form?
+  - implement new **List** in React using a form
+    - fetch current_user's lists GET /lists.json (or should I just append List to my_lists)
+    - fetch sharees with GET /lists/:id/sharees
+      - add a before_action to share this code with lists#show
 - Sort Lists
   - if **List's name** only comes from **Owner** table then can easily sort in *user.rb*: 
     - `has_many :owners, dependent: :destroy, -> { order(:my_list_name)}`
