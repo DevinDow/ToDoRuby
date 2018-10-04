@@ -9,9 +9,11 @@ class List extends React.Component {
     console.log("List " + props.list.id + " = " + props.list.name);
     console.log(props);
     this.state = {
-      tasks: []
+      tasks: [],
+      sharees: ''
     };
     this.fetchTasks = this.fetchTasks.bind(this);
+    this.fetchSharees = this.fetchSharees.bind(this);
     this.handleCreate = this.handleCreate.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
@@ -19,6 +21,7 @@ class List extends React.Component {
 
   componentDidMount() {
     this.fetchTasks()
+    this.fetchSharees()
   }
 
   fetchTasks() {
@@ -30,6 +33,16 @@ class List extends React.Component {
         console.log("List " + this.props.list.id + " = " + this.props.list.name + " fetched " + data.length + " Task(s)");
         console.log(data);
         this.setState({ tasks: data }) 
+      });
+  }
+
+  fetchSharees() {
+    fetch('/lists/' + this.props.list.id + '/sharees.json')
+      .then((response) => {
+        return response.text()
+      })
+      .then((data) => {
+        this.setState({ sharees: data }) 
       });
   }
 
@@ -102,11 +115,11 @@ class List extends React.Component {
   }
 
   render () {
-    //let sharees = this.props.sharees.length > 0 ? "SHARED WITH: " + this.props.sharees : "";
-    //{sharees}
+    let sharees = this.state.sharees ? "SHARED WITH: " + this.state.sharees : "";
     return (
       <div className="list">
         <h2><a href={`/lists/${this.props.list.id}`}>{this.props.list.name}</a></h2>
+        {sharees}
         <ListTasks list={this.props.list} tasks={this.state.tasks} handleUpdate={this.handleUpdate} handleDelete={this.handleDelete} fetchTasks={this.fetchTasks} />
         <NewTask list_id={this.props.list.id} handleCreate={this.handleCreate} fetchTasks={this.fetchTasks} />
       </div>

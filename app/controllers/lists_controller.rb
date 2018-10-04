@@ -16,7 +16,7 @@ class ListsController < ApplicationController
 
   # GET /lists/1/sharees.json
   def sharees
-    render json: @sharees, status: :ok
+    render plain: @sharees
   end
 
   # GET /lists/new
