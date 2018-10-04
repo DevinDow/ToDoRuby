@@ -25,9 +25,8 @@
 
 - style for **Tasks** that are checked = `.done { color: rgba(0, 0, 0, 0.3); text-decoration: line-through; }`
 - single-page app at `home#index` using ReactJS
-  - implement new **List** button in React using a form
-    - fetch sharees with *GET /lists/:id/sharees*
-      - add a *before_action* to share this code with *lists#show*
+  - fetch sharees with *GET /lists/:id/sharees*
+    - add a *before_action* to share this code with *lists#show*
 - Sort Lists
   - if **List's name** only comes from **Owner** table then can easily sort in *user.rb*: 
     - `has_many :owners, dependent: :destroy, -> { order(:my_list_name)}`
