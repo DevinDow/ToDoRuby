@@ -8,7 +8,7 @@ const Main = (props) => {
 
   return (
     <React.Fragment>
-      <MyLists my_lists={props.my_lists} sharees_per_list={props.sharees_per_list} />
+      <MyLists />
     </React.Fragment>
   );
 }

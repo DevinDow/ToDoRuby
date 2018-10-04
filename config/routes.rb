@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'tasks', to: 'tasks#all'
   resources :lists do
     resources :tasks, shallow: true
+    get 'sharees', on: :member
   end
 
 end
