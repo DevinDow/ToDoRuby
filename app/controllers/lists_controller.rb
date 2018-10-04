@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
   before_action :require_logged_in_user
-  before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_list, only: [:show, :sharees, :edit, :update, :destroy]
+  before_action :set_sharees, only: [:show, :sharees]
 
   # GET /lists
   # GET /lists.json
@@ -11,7 +12,11 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
-    @sharees = @list.owners.select{|owner| owner.user != current_user}.map{|owner| owner.user.name}.join(', ')
+  end
+
+  # GET /lists/1/sharees.json
+  def sharees
+    render json: @sharees, status: :ok
   end
 
   # GET /lists/new
@@ -70,9 +75,12 @@ class ListsController < ApplicationController
 
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_list
       @list = List.find(params[:id])
+    end
+
+    def set_sharees
+      @sharees = @list.owners.select{|owner| owner.user != current_user}.map{|owner| owner.user.name}.join(', ')
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
