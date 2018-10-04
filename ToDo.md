@@ -26,7 +26,6 @@
 - style for **Tasks** that are checked = `.done { color: rgba(0, 0, 0, 0.3); text-decoration: line-through; }`
 - single-page app at `home#index` using ReactJS
   - implement new **List** button in React using a form
-    - fetch current_user's **Lists** using *GET /lists.json* (or should I just append new **List** to **my_lists**)
     - fetch sharees with *GET /lists/:id/sharees*
       - add a *before_action* to share this code with *lists#show*
 - Sort Lists

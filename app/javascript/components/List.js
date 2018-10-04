@@ -102,11 +102,11 @@ class List extends React.Component {
   }
 
   render () {
-    let sharees = this.props.sharees.length > 0 ? "SHARED WITH: " + this.props.sharees : "";
+    //let sharees = this.props.sharees.length > 0 ? "SHARED WITH: " + this.props.sharees : "";
+    //{sharees}
     return (
       <div className="list">
         <h2><a href={`/lists/${this.props.list.id}`}>{this.props.list.name}</a></h2>
-        {sharees}
         <ListTasks list={this.props.list} tasks={this.state.tasks} handleUpdate={this.handleUpdate} handleDelete={this.handleDelete} fetchTasks={this.fetchTasks} />
         <NewTask list_id={this.props.list.id} handleCreate={this.handleCreate} fetchTasks={this.fetchTasks} />
       </div>

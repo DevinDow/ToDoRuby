@@ -3,13 +3,6 @@ class HomeController < ApplicationController
 
   # GET /
   def index
-    @lists = current_user.lists
-    @sharees_per_list = Hash[
-      @lists.map do |list|
-        sharees = list.owners.select{|owner| owner.user != current_user}.map{|owner| owner.user.name}.join(', ')
-        [list.id, sharees]
-      end
-    ]
   end
 
   # GET /about
