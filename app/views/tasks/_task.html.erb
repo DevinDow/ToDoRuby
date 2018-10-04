@@ -1,4 +1,4 @@
-<tr>
+<tr <%= task.done? ? "class=completed" : "" %>>
   <% if local_assigns.has_key? :show_list_name %>
     <td><%= task.list.name %></td>
   <% end %>

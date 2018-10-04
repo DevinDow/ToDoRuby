@@ -47,7 +47,7 @@ class Task extends React.Component {
     let name = this.state.editable ? <input className="name" type="text" ref={input => this.name = input} defaultValue={this.props.task.name} /> : <span className="name">{this.props.task.name}</span>;
     let submit = this.state.editable ? <button onClick={() => this.handleSubmit()}>Submit</button> : "";
     return (
-      <div className="task">
+      <div className={this.props.task.done ? "task completed" : "task"}>
         <input className="done" type="checkbox" ref={input => this.done = input} defaultChecked={this.props.task.done} onClick={() => this.handleDone()} />
         {priority}
         {name}

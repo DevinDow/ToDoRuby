@@ -23,7 +23,6 @@
 
 ## TODO
 
-- style for **Tasks** that are checked = `.done { color: rgba(0, 0, 0, 0.3); text-decoration: line-through; }`
 - Sort Lists
   - if **List's name** only comes from **Owner** table then can easily sort in *user.rb*: 
     - `has_many :owners, dependent: :destroy, -> { order(:my_list_name)}`
