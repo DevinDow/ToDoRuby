@@ -5,6 +5,10 @@ class HomeController < ApplicationController
   def index
   end
 
+  # GET /vue
+  def vue
+  end
+
   # GET /about
   def about
     redirect_to flash_path, notice: 'This is a notice.'

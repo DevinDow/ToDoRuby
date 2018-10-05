@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   # Home
   root to: 'home#index'
+  get 'vue', to: 'home#vue'
   get 'about', to: 'home#about'
   get 'flash', to: 'home#flashtest'
 
