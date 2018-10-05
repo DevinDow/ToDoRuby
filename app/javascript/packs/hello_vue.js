@@ -33,34 +33,10 @@
 // </div>
 
 
-import Vue from 'vue/dist/vue.esm'
-import App from '../app.vue'
-
-document.addEventListener('DOMContentLoaded', () => {
-  const app = new Vue({
-    el: '#hello',
-    data: {
-      message: "Can you say hello?"
-    },
-    components: { App }
-  })
-})
-
-
-
-// If the using turbolinks, install 'vue-turbolinks':
-//
-// yarn add 'vue-turbolinks'
-//
-// Then uncomment the code block below:
-//
-// import TurbolinksAdapter from 'vue-turbolinks'
 // import Vue from 'vue/dist/vue.esm'
 // import App from '../app.vue'
-//
-// Vue.use(TurbolinksAdapter)
-//
-// document.addEventListener('turbolinks:load', () => {
+
+// document.addEventListener('DOMContentLoaded', () => {
 //   const app = new Vue({
 //     el: '#hello',
 //     data: {
@@ -69,3 +45,27 @@ document.addEventListener('DOMContentLoaded', () => {
 //     components: { App }
 //   })
 // })
+
+
+
+// If the using turbolinks, install 'vue-turbolinks':
+//
+// yarn add 'vue-turbolinks'
+//
+// Then uncomment the code block below:
+
+import TurbolinksAdapter from 'vue-turbolinks'
+import Vue from 'vue/dist/vue.esm'
+import App from '../app.vue'
+
+Vue.use(TurbolinksAdapter)
+
+document.addEventListener('turbolinks:load', () => {
+  const app = new Vue({
+    el: '#hello',
+    data: {
+      message: "Can you say hello2?"
+    },
+    components: { App }
+  })
+})
