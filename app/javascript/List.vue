@@ -4,7 +4,11 @@
 
 <script>
 export default {
-  props: ["name"]
+  props: ["name"],
+  mounted: function () {
+    console.log("**LIST MOUNTED**")
+    console.log(this)
+  }
 }
 </script>
 

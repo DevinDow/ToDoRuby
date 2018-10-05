@@ -15,6 +15,15 @@ export default {
   mounted: function () {
     console.log("**Lists MOUNTED**")
     console.log(this)
+    fetch('/lists.json')
+      .then((response) => {
+        return response.json()
+      })
+      .then((data) => {
+        console.log("fetched " + data.length + " List(s)");
+        console.log(data);
+        //this.setState({ lists: data }) 
+      });
   }
 }
 </script>
