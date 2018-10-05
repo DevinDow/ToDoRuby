@@ -7,7 +7,7 @@ import App from '../app.vue'
 Vue.component('app', App)
 
 document.addEventListener('turbolinks:load', () => {
-  const main = new Vue({
-    el: '#main'
+  const vm = new Vue({
+    el: '#app'
   })
 })
