@@ -12,6 +12,11 @@ export default {
   components: {
     List
   },
+  data: function () {
+    return {
+      lists : []
+    }
+  },
   mounted: function () {
     console.log("**Lists MOUNTED**")
     console.log(this)
@@ -22,7 +27,8 @@ export default {
       .then((data) => {
         console.log("fetched " + data.length + " List(s)");
         console.log(data);
-        //this.setState({ lists: data }) 
+        this.lists = data;
+        console.log(this)
       });
   }
 }
