@@ -4,9 +4,10 @@ import App from '../app.vue'
 
 Vue.use(TurbolinksAdapter)
 
+Vue.component('app', App)
+
 document.addEventListener('turbolinks:load', () => {
-  const app = new Vue({
-    el: '#main',
-    components: { App }
+  const main = new Vue({
+    el: '#main'
   })
 })
