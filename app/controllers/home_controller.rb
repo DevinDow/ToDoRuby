@@ -1,10 +1,11 @@
 class HomeController < ApplicationController
   before_action :require_logged_in_user, only: [:index]
 
-  # GET /
-  def index
+  # GET /react
+  def react
   end
 
+  # GET /
   # GET /vue
   def vue
   end
