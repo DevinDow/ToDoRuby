@@ -11,6 +11,10 @@ import List from './List.vue'
 export default {
   components: {
     List
+  },
+  mounted: function () {
+    console.log("**Lists MOUNTED**")
+    console.log(this)
   }
 }
 </script>
