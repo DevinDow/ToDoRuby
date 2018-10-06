@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 class NewList extends React.Component {
 
   constructor(props) {
