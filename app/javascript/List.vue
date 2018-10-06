@@ -1,6 +1,6 @@
 <template>
   <div class="list container">
-    <h2><a v-bind:href="'/lists/' + list.id">{{ list.name }}</a></h2>
+    <h2><a v-bind:href="'/lists/'+list.id">{{ list.name }}</a></h2>
     <ul>
       <li>task1</li>
       <li>task2</li>

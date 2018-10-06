@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import ListTasks from "./ListTasks";
+import Task from "./Task";
 import NewTask from "./NewTask";
 class List extends React.Component {
 
@@ -120,7 +120,13 @@ class List extends React.Component {
       <div className="list container">
         <h2><a href={`/lists/${this.props.list.id}`}>{this.props.list.name}</a></h2>
         {sharees}
-        <ListTasks list={this.props.list} tasks={this.state.tasks} handleUpdate={this.handleUpdate} handleDelete={this.handleDelete} fetchTasks={this.fetchTasks} />
+        {
+          this.state.tasks.map((task) => {
+            return(
+              <Task key={task.id} task={task} handleUpdate={this.handleUpdate} handleDelete={this.handleDelete} />
+            )
+          })
+        }
         <NewTask list_id={this.props.list.id} handleCreate={this.handleCreate} fetchTasks={this.fetchTasks} />
       </div>
     );

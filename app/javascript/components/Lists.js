@@ -2,11 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import List from "./List";
 import NewList from "./NewList";
-class MyLists extends React.Component {
+class Lists extends React.Component {
   
   constructor(props) {
     super(props);
-    console.log("MyLists Component");
+    console.log("Lists Component");
     console.log(props);
     this.state = {
       lists: []
@@ -61,8 +61,8 @@ class MyLists extends React.Component {
       <div className="lists">
         {this.state.lists.map((list) => {
             return(
-              <React.Fragment>
-                <List list={list} key={list.id}/>
+              <React.Fragment key={list.id}>
+                <List list={list} />
                 <hr/>
               </React.Fragment>
             )
@@ -73,4 +73,4 @@ class MyLists extends React.Component {
   }
 }
 
-export default MyLists
+export default Lists

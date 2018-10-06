@@ -1,10 +1,8 @@
 <template>
   <div class="lists">
     <template v-for="list in lists">
-      <List 
-        v-bind:list="list"
-        v-bind:key="list.id" />
-      <hr v-bind:key="'hr-' + list.id" />
+      <List v-bind:list="list" v-bind:key="list.id" />
+      <hr v-bind:key="'hr-'+list.id" />
     </template>
     <button>New List</button>
   </div>
