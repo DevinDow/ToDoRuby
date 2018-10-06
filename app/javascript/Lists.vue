@@ -16,24 +16,33 @@ export default {
   components: {
     List
   },
+
   data: function () {
     return {
       lists : []
     }
   },
+
   mounted: function () {
     console.log("**Lists MOUNTED**")
     console.log(this)
-    fetch('/lists.json')
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        console.log("fetched " + data.length + " List(s)");
-        console.log(data);
-        this.lists = data;
-        console.log(this)
-      });
+    this.fetchLists()
+  },
+
+  methods: {
+    fetchLists () {
+      console.log("* fetchLists()")
+      fetch('/lists.json')
+        .then((response) => {
+          return response.json()
+        })
+        .then((data) => {
+          console.log("fetched " + data.length + " List(s)");
+          console.log(data);
+          this.lists = data;
+          console.log(this)
+        });
+    }
   }
 }
 </script>
