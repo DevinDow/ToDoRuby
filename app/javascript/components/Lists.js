@@ -58,19 +58,17 @@ class MyLists extends React.Component {
 
   render () {
     return (
-      <React.Fragment>
-        {
-          this.state.lists.map((list) => {
+      <div className="lists">
+        {this.state.lists.map((list) => {
             return(
-              <div key={list.id}>
-                <List list={list} />
+              <React.Fragment>
+                <List list={list} key={list.id}/>
                 <hr/>
-              </div>
+              </React.Fragment>
             )
-          })
-        }
+          })}
         <NewList handleCreate={this.handleCreate} />
-      </React.Fragment>
+      </div>
     );
   }
 }

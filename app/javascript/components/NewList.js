@@ -28,7 +28,7 @@ class NewList extends React.Component {
     let name = this.state.creating ? <input className="name" type="text" ref={input => this.name = input} /> : "";
     let createButton = this.state.creating ? <button onClick={() => this.handleCreate()}>Create</button> : "";
     return (
-      <div className="task">
+      <div className="new-list">
         {name}
         {createButton}
         <button onClick={() => this.toggleCreating()}>{this.state.creating ? 'Cancel' : 'New List'}</button>

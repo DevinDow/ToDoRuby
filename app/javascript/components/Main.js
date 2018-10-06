@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import MyLists from "./MyLists";
+import Lists from "./Lists";
 const Main = (props) => {
 
   console.log("Main Component");
@@ -8,7 +8,7 @@ const Main = (props) => {
 
   return (
     <React.Fragment>
-      <MyLists />
+      <Lists />
     </React.Fragment>
   );
 }
