@@ -1,4 +1,5 @@
 import Vue from 'vue/dist/vue.esm'
+Vue.config.devtools = true
 
 import TurbolinksAdapter from 'vue-turbolinks'
 Vue.use(TurbolinksAdapter)
