@@ -1,9 +1,9 @@
 <template>
-  <ol>
-    <li><List name="List 1" /></li>
-    <li><List name="List 2" /></li>
-    <li><List name="List 3" /></li>
-  </ol>
+  <ul>
+    <li v-for="list in lists" :key="list">
+      {{list.name}}
+    </li>
+  </ul>
 </template>
 
 <script>
