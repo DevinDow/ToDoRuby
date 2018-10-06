@@ -1,5 +1,5 @@
 <template>
-  <Lists></Lists>
+  <Lists />
 </template>
 
 <script>

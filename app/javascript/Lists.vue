@@ -1,7 +1,7 @@
 <template>
   <ul>
-    <li v-for="list in lists" :key="list">
-      {{list.name}}
+    <li v-for="list in lists" :key="list.id">
+      <List name="test" />
     </li>
   </ul>
 </template>
