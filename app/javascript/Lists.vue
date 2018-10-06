@@ -1,9 +1,10 @@
 <template>
-  <ul>
-    <li v-for="list in lists" :key="list.id">
-      <List name="test" />
-    </li>
-  </ul>
+  <div>
+    <List
+      v-for="list in lists"
+      v-bind:list="list"
+      v-bind:key="list.id" />
+  </div>
 </template>
 
 <script>

@@ -1,10 +1,10 @@
 <template>
-  <p>name={{ name }}</p>
+  <p>{{ list.name }}</p>
 </template>
 
 <script>
 export default {
-  props: ["name"],
+  props: ["list"],
   mounted: function () {
     console.log("**LIST MOUNTED**")
     console.log(this)
