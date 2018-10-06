@@ -1,5 +1,5 @@
 <template>
-  <p>{{ list.name }}</p>
+  <p><a v-bind:href="'/lists/' + list.id">{{ list.name }}</a></p>
 </template>
 
 <script>
