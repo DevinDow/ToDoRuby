@@ -2,7 +2,10 @@
 
 ## Vue
 
-- build out Vue Components copying React Components
+- Task Component
+  - Edit Task
+- NewTask Component
+- NewList Component
 
 ## Issues
 
