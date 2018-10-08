@@ -51,26 +51,7 @@ class List extends React.Component {
   }
 
   handleDelete(id) {
-    console.log('DELETING Task ' + id)
-
-    this.token = $('meta[name="csrf-token"]').attr('content');
-    console.log('token = ' + this.token)
-
-    fetch('/tasks/' + id + '.json', 
-    {
-      method: 'DELETE',
-      headers: { 
-        'Content-Type': 'application/json',
-        'X-CSRF-Token': this.token
-      }
-    }).then((response) => { 
-      console.log(response);
-      // filter out deleted Task
-      let newTasks = this.state.tasks.filter((task) => task.id !== id)
-      this.setState({
-        tasks: newTasks
-      })
-    })
+    APIs.deleteTask(id, this.fetchTasks)
   }
 
   render () {

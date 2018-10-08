@@ -1,10 +1,10 @@
 function getToken() {
-  let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+  let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
   console.log('token = ' + token)
   return token
 }
 
-export function fetchLists (setLists) {
+export function fetchLists(setLists) {
   console.log("* fetchLists()")
   fetch('/lists.json')
     .then((response) => {
@@ -17,8 +17,7 @@ export function fetchLists (setLists) {
     });
 }
 
-export function fetchTasks (listID, setTasks) {
-  console.log("* fetchTasks()")
+export function fetchTasks(listID, setTasks) {
   fetch('/lists/'+listID+'/tasks.json')
     .then((response) => {
       return response.json()
@@ -36,7 +35,10 @@ export function fetchSharees(listID, setSharees) {
       return response.text()
     })
     .then((data) => {
-      setSharees(data) 
+      if (data) {
+        console.log("fetched Sharee(s) = " + data)
+        setSharees(data)
+      }
     });
 }
 
@@ -53,12 +55,12 @@ export function createTask(listID, task, onTaskCreated) {
       'X-CSRF-Token': getToken()
     }
   }).then((response) => { 
-    console.log(response);
+    console.log(response)
     onTaskCreated()
   })
 }
 
-export function updateTask (task) {
+export function updateTask(task) {
   console.log('UPDATING Task ' + task.id)
 
   fetch('/tasks/' + task.id + '.json', 
@@ -71,5 +73,21 @@ export function updateTask (task) {
     }
   }).then((response) => { 
     console.log(response)
+  })
+}
+
+export function deleteTask(id, onTaskDeleted) {
+  console.log('DELETING Task ' + id)
+
+  fetch('/tasks/' + id + '.json', 
+  {
+    method: 'DELETE',
+    headers: { 
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': getToken()
+    }
+  }).then((response) => { 
+    console.log(response)
+    onTaskDeleted()
   })
 }
