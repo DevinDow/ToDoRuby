@@ -2,10 +2,12 @@
 
 ## Vue
 
-- NewList Component
+- Delete Task not working
+- NewList causes GET /lists before the INSERT owners
 - show List's sharees
 - Task .completed style
 - default button
+- focused <input>
 
 ## Issues
 

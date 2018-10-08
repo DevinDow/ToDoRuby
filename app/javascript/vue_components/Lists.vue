@@ -4,16 +4,18 @@
       <List v-bind:list="list" v-bind:key="list.id" />
       <hr v-bind:key="'hr-'+list.id" />
     </template>
-    <button>New List</button>
+    <NewList v-on:create="onCreateList" />
   </div>
 </template>
 
 <script>
 import List from './List.vue'
+import NewList from './NewList.vue'
 import * as APIs from '../apis.js'
 export default {
   components: {
-    List
+    List,
+    NewList
   },
 
   data: function () {
@@ -25,13 +27,23 @@ export default {
   mounted: function () {
     console.log("**Lists MOUNTED**")
     console.log(this)
-    APIs.fetchLists(this.setLists)
+    this.fetchLists()
   },
 
   methods: {
+    fetchLists() {
+      APIs.fetchLists(this.setLists)
+    },
+
     setLists(lists) {
       this.lists = lists
     },
+
+    onCreateList(list) {
+      console.log("*** onCreateList()")
+      console.log(list)
+      APIs.createList(list, this.fetchLists())
+    }
   }
 }
 </script>
