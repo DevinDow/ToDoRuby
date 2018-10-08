@@ -40,8 +40,7 @@ export default {
     onSubmitTask (task) {
       console.log("*** onSubmitTask()")
       console.log(task)
-      APIs.updateTask(task)
-      this.fetchTasks()
+      APIs.updateTask(task, this.fetchTasks())
     }
   }
 }

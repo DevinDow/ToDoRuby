@@ -54,8 +54,8 @@ export function createList(list, onListCreated) {
       'X-CSRF-Token': getToken()
     }
   }).then((response) => { 
-    console.log(response);
-    onListCreated()
+    console.log(response)
+    if (onListCreated) onListCreated()
   })
 }
 
@@ -73,11 +73,11 @@ export function createTask(listID, task, onTaskCreated) {
     }
   }).then((response) => { 
     console.log(response)
-    onTaskCreated()
+    if (onTaskCreated) onTaskCreated()
   })
 }
 
-export function updateTask(task) {
+export function updateTask(task, onTaskUpdated) {
   console.log('UPDATING Task ' + task.id)
 
   fetch('/tasks/' + task.id + '.json', 
@@ -90,6 +90,7 @@ export function updateTask(task) {
     }
   }).then((response) => { 
     console.log(response)
+    if (onTaskUpdated) onTaskUpdated()
   })
 }
 
@@ -105,6 +106,6 @@ export function deleteTask(id, onTaskDeleted) {
     }
   }).then((response) => { 
     console.log(response)
-    onTaskDeleted()
+    if (onTaskDeleted) onTaskDeleted()
   })
 }

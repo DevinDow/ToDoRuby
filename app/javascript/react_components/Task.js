@@ -13,6 +13,10 @@ class Task extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  toggleEdit() {
+    this.setState({editable: !this.state.editable});
+  }
+
   handleDone() {
     // allow checking Done when not editable to do an update
     if (!this.state.editable) {
@@ -23,10 +27,6 @@ class Task extends React.Component {
         name: this.props.task.name
       })
     }
-  }
-
-  toggleEdit() {
-    this.setState({editable: !this.state.editable});
   }
 
   handleSubmit() {
