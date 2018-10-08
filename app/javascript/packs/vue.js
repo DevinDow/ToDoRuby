@@ -4,7 +4,7 @@ console.log("*** Vue.config.devtools = " + Vue.config.devtools);
 import TurbolinksAdapter from 'vue-turbolinks'
 Vue.use(TurbolinksAdapter)
 
-import App from '../components/App.vue'
+import App from '../vue_components/App.vue'
 Vue.component('App', App)
 
 document.addEventListener('turbolinks:load', () => {
