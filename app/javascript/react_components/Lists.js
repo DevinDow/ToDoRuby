@@ -1,6 +1,7 @@
 import React from "react"
 import List from "./List";
 import NewList from "./NewList";
+import * as APIs from '../apis.js'
 class Lists extends React.Component {
   
   constructor(props) {
@@ -10,26 +11,18 @@ class Lists extends React.Component {
     this.state = {
       lists: []
     };
-    this.fetchLists = this.fetchLists.bind(this);
+    this.setLists = this.setLists.bind(this);
     this.handleCreate = this.handleCreate.bind(this);
     /*this.handleUpdate = this.handleUpdate.bind(this);
     this.handleDelete = this.handleDelete.bind(this);*/
   }
 
   componentDidMount() {
-    this.fetchLists()
+    APIs.fetchLists(this.setLists)
   }
 
-  fetchLists() {
-    fetch('/lists.json')
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        console.log("fetched " + data.length + " List(s)");
-        console.log(data);
-        this.setState({ lists: data }) 
-      });
+  setLists(lists) {
+    this.setState({ lists: lists })
   }
 
   handleCreate(list) {
