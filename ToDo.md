@@ -4,7 +4,6 @@
 
 - NewList input should get cleared
 - show List's sharees
-- Task .completed style
 - default button
 - focused <input>
 - EditList with Delete
