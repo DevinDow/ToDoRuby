@@ -12,16 +12,25 @@ class List extends React.Component {
       tasks: [],
       sharees: ''
     };
+    this.fetchTasks = this.fetchTasks.bind(this);
+    this.fetchSharees = this.fetchSharees.bind(this);
     this.setTasks = this.setTasks.bind(this);
     this.setSharees = this.setSharees.bind(this);
     this.handleCreate = this.handleCreate.bind(this);
-    this.onTaskCreated = this.onTaskCreated.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
+    this.fetchTasks()
+    this.fetchSharees()
+  }
+
+  fetchTasks() {
     APIs.fetchTasks(this.props.list.id, this.setTasks)
+  }
+
+  fetchSharees() {
     APIs.fetchSharees(this.props.list.id, this.setSharees)
   }
 
@@ -33,34 +42,12 @@ class List extends React.Component {
     this.setState({ sharees: sharees })
   }
 
-  onTaskCreated() {
-    APIs.fetchTasks(this.props.list.id, this.setTasks)
-  }
-
   handleCreate(task) {
-    APIs.createTask(this.props.list.id, task, this.onTaskCreated)
+    APIs.createTask(this.props.list.id, task, this.fetchTasks)
   }
 
   handleUpdate(task) {
-    console.log('UPDATING Task ' + task.id)
-
-    let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-    console.log('token = ' + token)
-  
-    fetch('/tasks/' + task.id + '.json', 
-    {
-      method: 'PUT',
-      body: JSON.stringify({task: task}),
-      headers: { 
-        'Content-Type': 'application/json',
-        'X-CSRF-Token': token
-      }
-    }).then((response) => { 
-      console.log(response);
-
-      // update Task in UI
-      this.fetchTasks()
-    })
+    APIs.updateTask(task, this.fetchTasks)
   }
 
   handleDelete(id) {
