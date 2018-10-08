@@ -2,7 +2,6 @@
 
 ## Vue
 
-- Delete Task not working
 - NewList input should get cleared
 - show List's sharees
 - Task .completed style

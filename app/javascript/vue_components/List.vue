@@ -4,7 +4,8 @@
     <Task v-for="task in tasks"
       v-bind:task="task"
       v-bind:key="task.id"
-      v-on:update="onUpdateTask" />
+      v-on:update="onUpdateTask"
+      v-on:delete="onDeleteTask" />
     <NewTask v-on:create="onCreateTask" />
   </div>
 </template>
@@ -52,6 +53,12 @@ export default {
       console.log("*** onUpdateTask()")
       console.log(task)
       APIs.updateTask(task, this.fetchTasks)
+    },
+
+    onDeleteTask(task) {
+      console.log("*** onDeleteTask()")
+      console.log(task)
+      APIs.deleteTask(task.id, this.fetchTasks)
     }
   }
 }
