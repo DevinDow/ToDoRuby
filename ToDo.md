@@ -2,10 +2,10 @@
 
 ## Vue
 
-- Task Component
-  - Edit Task
-- NewTask Component
 - NewList Component
+- show List's sharees
+- Task .completed style
+- default button
 
 ## Issues
 

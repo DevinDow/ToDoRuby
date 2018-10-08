@@ -3,7 +3,7 @@
     <input class="done" type="checkbox" v-model="task.done" />
     <input class="priority" type="number" v-model="task.priority" />
     <input class="name" v-model="task.name" />
-    <button v-on:click="$emit('submit', task); editing=false">Submit</button>
+    <button v-on:click="$emit('update', task); editing=false">Submit</button>
     <button v-on:click="editing=false">Cancel</button>
     <button>Delete</button>
   </div>
@@ -26,12 +26,6 @@ export default {
     return {
       editing: false
     }
-  },
-
-  methods: {
-    toggleEdit() {
-      this.editing = !this.editing;
-    },
   }
 }
 </script>
