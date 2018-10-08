@@ -2,11 +2,13 @@
 
 ## Vue
 
-- NewList input should get cleared
 - show List's sharees
 - default button
 - focused <input>
-- EditList with Delete
+
+## Vue & React
+
+- EditList Component with Delete button
 
 ## Issues
 

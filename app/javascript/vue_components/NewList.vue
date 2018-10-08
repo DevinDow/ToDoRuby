@@ -1,7 +1,7 @@
 <template>
   <div v-if="creating" class="list">
     <input class="name" v-model="list.name" />
-    <button v-on:click="$emit('create', list); creating=false">Create</button>
+    <button v-on:click="$emit('create', list); creating=false; list = {}">Create</button>
     <button v-on:click="creating=false">Cancel</button>
   </div>
   <div v-else class="list">
