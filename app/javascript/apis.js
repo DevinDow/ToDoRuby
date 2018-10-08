@@ -40,6 +40,24 @@ export function fetchSharees(listID, setSharees) {
     });
 }
 
+export function createTask(listID, task, onTaskCreated) {
+  console.log("CREATING Task " + task.name + " - priority=" + task.priority)
+  console.log(task)
+
+  fetch('/lists/' + listID + '/tasks.json', 
+  {
+    method: 'POST',
+    body: JSON.stringify({task: task}),
+    headers: { 
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': getToken()
+    }
+  }).then((response) => { 
+    console.log(response);
+    onTaskCreated()
+  })
+}
+
 export function updateTask (task) {
   console.log('UPDATING Task ' + task.id)
 

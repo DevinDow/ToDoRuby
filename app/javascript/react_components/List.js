@@ -15,6 +15,7 @@ class List extends React.Component {
     this.setTasks = this.setTasks.bind(this);
     this.setSharees = this.setSharees.bind(this);
     this.handleCreate = this.handleCreate.bind(this);
+    this.onTaskCreated = this.onTaskCreated.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
@@ -32,27 +33,12 @@ class List extends React.Component {
     this.setState({ sharees: sharees })
   }
 
+  onTaskCreated() {
+    APIs.fetchTasks(this.props.list.id, this.setTasks)
+  }
+
   handleCreate(task) {
-    console.log("CREATING Task " + task.name + " - priority=" + task.priority)
-    console.log(task)
-
-    let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-    console.log('token = ' + token)
-  
-    fetch('/lists/' + this.props.list.id + '/tasks.json', 
-    {
-      method: 'POST',
-      body: JSON.stringify({task: task}),
-      headers: { 
-        'Content-Type': 'application/json',
-        'X-CSRF-Token': token
-      }
-    }).then((response) => { 
-      console.log(response);
-
-      // update Task in UI
-      this.fetchTasks()
-    })
+    APIs.createTask(this.props.list.id, task, this.onTaskCreated)
   }
 
   handleUpdate(task) {
