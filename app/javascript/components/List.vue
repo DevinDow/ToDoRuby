@@ -29,18 +29,12 @@ export default {
   },
 
   methods: {
-    fetchTasks () {
-      console.log("* fetchTasks()")
-      fetch('/lists/'+this.$props.list.id+'/tasks.json')
-        .then((response) => {
-          return response.json()
-        })
-        .then((data) => {
-          console.log("fetched " + data.length + " Task(s)")
-          console.log(data)
-          this.tasks = data
-          console.log(this)
-        });
+    fetchTasks() {
+      APIs.fetchTasks(this.$props.list.id, this.setTasks)
+    },
+
+    setTasks(tasks) {
+      this.tasks = tasks
     },
 
     onSubmitTask (task) {
