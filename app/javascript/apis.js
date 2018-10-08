@@ -5,7 +5,6 @@ function getToken() {
 }
 
 export function fetchLists(setLists) {
-  console.log("* fetchLists()")
   fetch('/lists.json')
     .then((response) => {
       return response.json()
@@ -40,6 +39,24 @@ export function fetchSharees(listID, setSharees) {
         setSharees(data)
       }
     });
+}
+
+export function createList(list, onListCreated) {
+  console.log("CREATING List " + list.name)
+  console.log(list)
+
+  fetch('/lists.json', 
+  {
+    method: 'POST',
+    body: JSON.stringify({list: list}),
+    headers: { 
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': getToken()
+    }
+  }).then((response) => { 
+    console.log(response);
+    onListCreated()
+  })
 }
 
 export function createTask(listID, task, onTaskCreated) {

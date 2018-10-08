@@ -11,6 +11,7 @@ class Lists extends React.Component {
     this.state = {
       lists: []
     };
+    this.fetchLists = this.fetchLists.bind(this);
     this.setLists = this.setLists.bind(this);
     this.handleCreate = this.handleCreate.bind(this);
     /*this.handleUpdate = this.handleUpdate.bind(this);
@@ -18,34 +19,20 @@ class Lists extends React.Component {
   }
 
   componentDidMount() {
+    this.fetchLists()
+  }
+
+  fetchLists() {
     APIs.fetchLists(this.setLists)
   }
 
   setLists(lists) {
+    console.log("* setLists()")
     this.setState({ lists: lists })
   }
 
   handleCreate(list) {
-    console.log("CREATING List " + list.name)
-    console.log(list)
-
-    let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-    console.log('token = ' + token)
-  
-    fetch('/lists.json', 
-    {
-      method: 'POST',
-      body: JSON.stringify({list: list}),
-      headers: { 
-        'Content-Type': 'application/json',
-        'X-CSRF-Token': token
-      }
-    }).then((response) => { 
-      console.log(response);
-
-      // update Lists in UI
-      this.fetchLists()
-    })
+    APIs.createList(list, this.fetchLists)
   }
 
   render () {
