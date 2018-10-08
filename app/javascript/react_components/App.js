@@ -1,8 +1,8 @@
 import React from "react"
 import Lists from "./Lists";
-const Main = (props) => {
+const App = (props) => {
 
-  console.log("Main Component");
+  console.log("App Component");
   console.log(props);
 
   return (
@@ -12,4 +12,4 @@ const Main = (props) => {
   );
 }
 
-export default Main
+export default App
