@@ -30,6 +30,16 @@ export function fetchTasks (listID, setTasks) {
     });
 }
 
+export function fetchSharees(listID, setSharees) {
+  fetch('/lists/' + listID + '/sharees.json')
+    .then((response) => {
+      return response.text()
+    })
+    .then((data) => {
+      setSharees(data) 
+    });
+}
+
 export function updateTask (task) {
   console.log('UPDATING Task ' + task.id)
 

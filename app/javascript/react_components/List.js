@@ -13,7 +13,7 @@ class List extends React.Component {
       sharees: ''
     };
     this.setTasks = this.setTasks.bind(this);
-    this.fetchSharees = this.fetchSharees.bind(this);
+    this.setSharees = this.setSharees.bind(this);
     this.handleCreate = this.handleCreate.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
@@ -21,21 +21,15 @@ class List extends React.Component {
 
   componentDidMount() {
     APIs.fetchTasks(this.props.list.id, this.setTasks)
-    this.fetchSharees()
+    APIs.fetchSharees(this.props.list.id, this.setSharees)
   }
 
   setTasks(tasks) {
     this.setState({ tasks: tasks })
   }
 
-  fetchSharees() {
-    fetch('/lists/' + this.props.list.id + '/sharees.json')
-      .then((response) => {
-        return response.text()
-      })
-      .then((data) => {
-        this.setState({ sharees: data }) 
-      });
+  setSharees(sharees) {
+    this.setState({ sharees: sharees })
   }
 
   handleCreate(task) {
