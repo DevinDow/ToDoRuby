@@ -1,6 +1,7 @@
 import React from "react"
 import Task from "./Task";
 import NewTask from "./NewTask";
+import * as APIs from '../apis.js'
 class List extends React.Component {
 
   constructor(props) {
@@ -11,7 +12,7 @@ class List extends React.Component {
       tasks: [],
       sharees: ''
     };
-    this.fetchTasks = this.fetchTasks.bind(this);
+    this.setTasks = this.setTasks.bind(this);
     this.fetchSharees = this.fetchSharees.bind(this);
     this.handleCreate = this.handleCreate.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
@@ -19,20 +20,12 @@ class List extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchTasks()
+    APIs.fetchTasks(this.props.list.id, this.setTasks)
     this.fetchSharees()
   }
 
-  fetchTasks() {
-    fetch('/lists/' + this.props.list.id + '/tasks.json')
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        console.log("List " + this.props.list.id + " = " + this.props.list.name + " fetched " + data.length + " Task(s)");
-        console.log(data);
-        this.setState({ tasks: data }) 
-      });
+  setTasks(tasks) {
+    this.setState({ tasks: tasks })
   }
 
   fetchSharees() {
