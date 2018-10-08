@@ -36,9 +36,9 @@ export default {
           return response.json()
         })
         .then((data) => {
-          console.log("fetched " + data.length + " Task(s)");
-          console.log(data);
-          this.tasks = data;
+          console.log("fetched " + data.length + " Task(s)")
+          console.log(data)
+          this.tasks = data
           console.log(this)
         });
     },
@@ -47,6 +47,7 @@ export default {
       console.log("*** onSubmitTask()")
       console.log(task)
       APIs.updateTask(task)
+      this.fetchTasks()
     }
   }
 }
