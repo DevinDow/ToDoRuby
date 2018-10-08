@@ -5,5 +5,5 @@
 - **Owners** allows a **List** to be owned by multiple **Users**
 
 ## UI
-- **ReactJS** for single-page app at *home#index*
+- **Vue** & **ReactJS** for single-page app at *home#vue* & *home#react* (*root* points to *home#vue*)
 - still offer other REST routes (*/lists*, etc)

@@ -42,7 +42,7 @@ export default {
     onCreateList(list) {
       console.log("*** onCreateList()")
       console.log(list)
-      APIs.createList(list, this.fetchLists())
+      APIs.createList(list, this.fetchLists)
     }
   }
 }

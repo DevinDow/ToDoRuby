@@ -45,13 +45,13 @@ export default {
     onCreateTask(task) {
       console.log("*** onCreateTask()")
       console.log(task)
-      APIs.createTask(this.$props.list.id, task, this.fetchTasks())
+      APIs.createTask(this.$props.list.id, task, this.fetchTasks)
     },
 
     onUpdateTask(task) {
       console.log("*** onUpdateTask()")
       console.log(task)
-      APIs.updateTask(task, this.fetchTasks())
+      APIs.updateTask(task, this.fetchTasks)
     }
   }
 }

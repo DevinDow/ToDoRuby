@@ -3,11 +3,12 @@
 ## Vue
 
 - Delete Task not working
-- NewList causes GET /lists before the INSERT owners
+- NewList input should get cleared
 - show List's sharees
 - Task .completed style
 - default button
 - focused <input>
+- EditList with Delete
 
 ## Issues
 
