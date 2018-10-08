@@ -3,11 +3,11 @@
 ## Vue
 
 - show List's sharees
-- default button
-- focused <input>
 
 ## Vue & React
 
+- focused <input>
+- default button
 - EditList Component with Delete button
 
 ## Issues

@@ -1,4 +1,5 @@
 import React from "react"
+import Sharees from "./Sharees";
 import Task from "./Task";
 import NewTask from "./NewTask";
 import * as APIs from '../apis.js'
@@ -9,13 +10,10 @@ class List extends React.Component {
     console.log("List " + props.list.id + " = " + props.list.name);
     console.log(props);
     this.state = {
-      tasks: [],
-      sharees: ''
+      tasks: []
     };
     this.fetchTasks = this.fetchTasks.bind(this);
-    this.fetchSharees = this.fetchSharees.bind(this);
     this.setTasks = this.setTasks.bind(this);
-    this.setSharees = this.setSharees.bind(this);
     this.handleCreate = this.handleCreate.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
@@ -23,23 +21,14 @@ class List extends React.Component {
 
   componentDidMount() {
     this.fetchTasks()
-    this.fetchSharees()
   }
 
   fetchTasks() {
     APIs.fetchTasks(this.props.list.id, this.setTasks)
   }
 
-  fetchSharees() {
-    APIs.fetchSharees(this.props.list.id, this.setSharees)
-  }
-
   setTasks(tasks) {
     this.setState({ tasks: tasks })
-  }
-
-  setSharees(sharees) {
-    this.setState({ sharees: sharees })
   }
 
   handleCreate(task) {
@@ -55,11 +44,10 @@ class List extends React.Component {
   }
 
   render () {
-    let sharees = this.state.sharees ? "SHARED WITH: " + this.state.sharees : "";
     return (
       <div className="list container">
         <h2><a href={`/lists/${this.props.list.id}`}>{this.props.list.name}</a></h2>
-        {sharees}
+        <Sharees list_id={this.props.list.id} />
         {
           this.state.tasks.map((task) => {
             return(
