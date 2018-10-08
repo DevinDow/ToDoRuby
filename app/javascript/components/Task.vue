@@ -1,7 +1,7 @@
 <template>
   <div v-if="editable" class="task {this.props.task.done ? 'completed' : ''}">
     <input class="done" type="checkbox" v-model="task.done" v-on:click="handleDone" />
-    <input class="priority" v-model="task.priority" />
+    <input class="priority" type="number" v-model="task.priority" />
     <input class="name" v-model="task.name" />
     <button v-on:click="handleSubmit">Submit</button>
     <button v-on:click="editable=false">Cancel</button>
