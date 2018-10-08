@@ -8,6 +8,7 @@
 
 <script>
 import Task from './Task.vue'
+import * as APIs from '../apis.js'
 export default {
   components: {
     Task
@@ -45,6 +46,7 @@ export default {
     onSubmitTask (task) {
       console.log("*** onSubmitTask()")
       console.log(task)
+      APIs.updateTask(task)
     }
   }
 }

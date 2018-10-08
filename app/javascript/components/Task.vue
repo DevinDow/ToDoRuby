@@ -3,7 +3,7 @@
     <input class="done" type="checkbox" v-model="task.done" v-on:click="handleDone" />
     <input class="priority" type="number" v-model="task.priority" />
     <input class="name" v-model="task.name" />
-    <button v-on:click="$emit('submit', task)">Submit</button>
+    <button v-on:click="$emit('submit', task); editable=false">Submit</button>
     <button v-on:click="editable=false">Cancel</button>
     <button>Delete</button>
   </div>
