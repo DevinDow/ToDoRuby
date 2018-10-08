@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   # Home
-  root to: 'home#index'
+  root to: 'home#vue'
+  get 'react', to: 'home#react'
+  get 'vue', to: 'home#vue'
   get 'about', to: 'home#about'
   get 'flash', to: 'home#flashtest'
 

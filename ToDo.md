@@ -1,5 +1,11 @@
 # ToDo
 
+## Vue & React
+
+- focused <input>
+- default button
+- EditList Component with Delete button
+
 ## Issues
 
 - **heroku** - some things that work locally in **DEV** are not working in heroku **PROD**.  I suspect one culprit is breaking all of these.
