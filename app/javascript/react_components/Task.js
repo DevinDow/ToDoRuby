@@ -18,8 +18,8 @@ class Task extends React.Component {
     if (!this.state.editable) {
       this.props.handleUpdate({
         id: this.props.task.id,
-        priority: this.props.task.priority, 
         done: this.done.checked, 
+        priority: this.props.task.priority, 
         name: this.props.task.name
       })
     }
@@ -33,8 +33,8 @@ class Task extends React.Component {
     if (this.state.editable) {
       this.props.handleUpdate({
         id: this.props.task.id,
-        priority: this.priority.value, 
         done: this.done.checked, 
+        priority: this.priority.value, 
         name: this.name.value
       })
     }

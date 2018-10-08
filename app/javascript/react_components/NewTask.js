@@ -18,6 +18,7 @@ class NewTask extends React.Component {
 
   handleCreate() {
     this.props.handleCreate({
+      done: this.done.checked, 
       priority: this.priority.value, 
       name: this.name.value
     })
@@ -25,11 +26,13 @@ class NewTask extends React.Component {
   }
 
   render() {
+    let done = this.state.creating ? <input className="done" type="checkbox" ref={input => this.done = input} /> : "";
     let priority = this.state.creating ? <input className="priority" type="number" ref={input => this.priority = input} /> : "";
     let name = this.state.creating ? <input className="name" type="text" ref={input => this.name = input} /> : "";
     let createButton = this.state.creating ? <button onClick={() => this.handleCreate()}>Create</button> : "";
     return (
-      <div className="new-task">
+      <div className="task">
+        {done}
         {priority}
         {name}
         {createButton}
