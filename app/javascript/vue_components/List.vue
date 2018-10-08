@@ -1,6 +1,7 @@
 <template>
   <div class="list container">
     <h2><a v-bind:href="'/lists/'+list.id">{{ list.name }}</a></h2>
+    <Sharees v-bind:list_id=list.id />
     <Task v-for="task in tasks"
       v-bind:task="task"
       v-bind:key="task.id"
@@ -11,11 +12,13 @@
 </template>
 
 <script>
+import Sharees from './Sharees.vue'
 import Task from './Task.vue'
 import NewTask from './NewTask.vue'
 import * as APIs from '../apis.js'
 export default {
   components: {
+    Sharees,
     Task,
     NewTask
   },

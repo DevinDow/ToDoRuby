@@ -1,9 +1,5 @@
 # ToDo
 
-## Vue
-
-- show List's sharees
-
 ## Vue & React
 
 - focused <input>
