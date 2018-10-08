@@ -27,7 +27,6 @@ class Lists extends React.Component {
   }
 
   setLists(lists) {
-    console.log("* setLists()")
     this.setState({ lists: lists })
   }
 
