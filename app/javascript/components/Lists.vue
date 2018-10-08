@@ -10,6 +10,7 @@
 
 <script>
 import List from './List.vue'
+import * as APIs from '../apis.js'
 export default {
   components: {
     List
@@ -24,23 +25,13 @@ export default {
   mounted: function () {
     console.log("**Lists MOUNTED**")
     console.log(this)
-    this.fetchLists()
+    APIs.fetchLists(this.setLists)
   },
 
   methods: {
-    fetchLists () {
-      console.log("* fetchLists()")
-      fetch('/lists.json')
-        .then((response) => {
-          return response.json()
-        })
-        .then((data) => {
-          console.log("fetched " + data.length + " List(s)");
-          console.log(data);
-          this.lists = data;
-          console.log(this)
-        });
-    }
+    setLists(lists) {
+      this.lists = lists
+    },
   }
 }
 </script>

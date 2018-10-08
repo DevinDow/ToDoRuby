@@ -4,6 +4,19 @@ function getToken() {
   return token
 }
 
+export function fetchLists (setLists) {
+  console.log("* fetchLists()")
+  fetch('/lists.json')
+    .then((response) => {
+      return response.json()
+    })
+    .then((data) => {
+      console.log("fetched " + data.length + " List(s)")
+      console.log(data)
+      setLists(data)
+    });
+}
+
 export function fetchTasks (listID, setTasks) {
   console.log("* fetchTasks()")
   fetch('/lists/'+listID+'/tasks.json')
