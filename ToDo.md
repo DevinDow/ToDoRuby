@@ -2,9 +2,12 @@
 
 ## Vue & React
 
-- default button in React
-- focused <input>
 - add **EditList** Component with *Delete* button
+
+## React
+
+- default button
+- focused <input>
 
 ## Issues
 
