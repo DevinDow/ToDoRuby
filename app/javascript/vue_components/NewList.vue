@@ -1,11 +1,11 @@
 <template>
-  <form v-if="creating" class="list" @submit.prevent="$emit('create', list); cancelCreating()" @keydown.esc="cancelCreating">
-    <input class="name" v-model="list.name" />
+  <form v-if="creating" class="list" @submit.prevent="$emit('create', list); creating=false" @keydown.esc="creating=false">
+    <input class="name" ref="name" v-model="list.name" />
     <button type="submit">Create</button>
-    <button type="button" v-on:click="cancelCreating">Cancel</button>
+    <button type="button" @click="creating=false">Cancel</button>
   </form>
   <div v-else class="list">
-    <button v-on:click="creating=true">New List</button>
+    <button @click="startCreating">New List</button>
   </div>
 </template>
 
@@ -19,9 +19,10 @@ export default {
   }, 
 
   methods: {
-    cancelCreating() {
-      this.creating = false
+    startCreating() {
+      this.creating = true
       this.list = {}
+      this.$nextTick(() => this.$refs.name.focus())
     }
   }
 }
