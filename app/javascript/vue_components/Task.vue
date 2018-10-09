@@ -4,15 +4,15 @@
     <input class="priority" type="number" v-model="task_edit.priority" />
     <input class="name" v-model="task_edit.name" />
     <button type="submit">Submit</button>
-    <button type="button" v-on:click="editing=false">Cancel</button>
-    <button type="button" v-on:click="$emit('delete', task_edit)" data-confirm="Are you sure?">Delete</button>
+    <button type="button" @click="editing=false">Cancel</button>
+    <button type="button" @click="$emit('delete', task_edit)" data-confirm="Are you sure?">Delete</button>
   </form>
   <div v-else v-bind="attrs">
-    <input class="done" type="checkbox" v-model="task.done" v-on:click="$emit('submit', task)" />
+    <input class="done" type="checkbox" v-model="task.done" @click="$emit('submit', task)" />
     <span class="priority">{{ task.priority }}</span>
     <span class="name">{{ task.name }}</span>
-    <button v-on:click="edit">Edit</button>
-    <button v-on:click="$emit('delete', task)" data-confirm="Are you sure?">Delete</button>
+    <button @click="edit">Edit</button>
+    <button @click="$emit('delete', task)" data-confirm="Are you sure?">Delete</button>
   </div>
 </template>
 
