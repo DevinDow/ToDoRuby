@@ -37,9 +37,6 @@ export default {
   methods: {
     cancelEditing() {
       this.editing = false
-      console.log("@@@cancelEditing this.$props.orig_task=" + this.$props.orig_task)
-      this.task = this.$props.orig_task
-      console.log("@@@cancelEditing this.task=" + this.task)
     }
   }
 }
