@@ -2,7 +2,7 @@
   <form v-if="editing" class="task" @submit.prevent="$emit('update', task_edit); editing=false" @keydown.esc="editing=false">
     <input class="done" type="checkbox" v-model="task_edit.done" />
     <input class="priority" type="number" v-model="task_edit.priority" />
-    <input class="name" v-model="task_edit.name" />
+    <input class="name" ref="name" v-model="task_edit.name" />
     <button type="submit">Submit</button>
     <button type="button" @click="editing=false">Cancel</button>
     <button type="button" @click="$emit('delete', task_edit)" data-confirm="Are you sure?">Delete</button>
@@ -11,7 +11,7 @@
     <input class="done" type="checkbox" v-model="task.done" @click="$emit('update', { id: task.id, done: !task.done})" />
     <span class="priority">{{ task.priority }}</span>
     <span class="name">{{ task.name }}</span>
-    <button @click="edit">Edit</button>
+    <button @click="startEditing">Edit</button>
     <button @click="$emit('delete', task)" data-confirm="Are you sure?">Delete</button>
   </div>
 </template>
@@ -36,9 +36,10 @@ export default {
   },
 
   methods: {
-    edit() {
+    startEditing() {
       this.task_edit = JSON.parse(JSON.stringify(this.$props.task)) // copy props.task to task_edit so we can cancel without modifying props.task
       this.editing=true;
+      this.$nextTick(() => this.$refs.name.focus())
     }
   }
 }
