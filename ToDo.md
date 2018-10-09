@@ -2,7 +2,6 @@
 
 ## Vue & React
 
-- *Cancel* should not update **props**, should work off state
 - default button in React
 - focused <input>
 - add **EditList** Component with *Delete* button

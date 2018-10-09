@@ -1,17 +1,17 @@
 <template>
-  <form v-if="editing" v-bind="attrs" @submit.prevent="$emit('update', task); editing=false" @keydown.esc="cancelEditing">
-    <input class="done" type="checkbox" v-model="task.done" />
-    <input class="priority" type="number" v-model="task.priority" />
-    <input class="name" v-model="task.name" />
+  <form v-if="editing" v-bind="attrs" @submit.prevent="$emit('update', task_edit); editing=false" @keydown.esc="editing=false">
+    <input class="done" type="checkbox" v-model="task_edit.done" />
+    <input class="priority" type="number" v-model="task_edit.priority" />
+    <input class="name" v-model="task_edit.name" />
     <button type="submit">Submit</button>
-    <button type="button" v-on:click="cancelEditing">Cancel</button>
-    <button type="button" v-on:click="$emit('delete', task)" data-confirm="Are you sure?">Delete</button>
+    <button type="button" v-on:click="editing=false">Cancel</button>
+    <button type="button" v-on:click="$emit('delete', task_edit)" data-confirm="Are you sure?">Delete</button>
   </form>
   <div v-else v-bind="attrs">
     <input class="done" type="checkbox" v-model="task.done" v-on:click="$emit('submit', task)" />
     <span class="priority">{{ task.priority }}</span>
     <span class="name">{{ task.name }}</span>
-    <button v-on:click="editing=true">Edit</button>
+    <button v-on:click="edit">Edit</button>
     <button v-on:click="$emit('delete', task)" data-confirm="Are you sure?">Delete</button>
   </div>
 </template>
@@ -24,7 +24,8 @@ export default {
 
   data: function () {
     return {
-      editing: false
+      editing: false,
+      task_edit: {}
     }
   },
 
@@ -35,8 +36,9 @@ export default {
   },
 
   methods: {
-    cancelEditing() {
-      this.editing = false
+    edit() {
+      this.task_edit = JSON.parse(JSON.stringify(this.$props.task)) // copy props.task to task_edit so we can cancel without modifying props.task
+      this.editing=true;
     }
   }
 }
