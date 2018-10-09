@@ -11,7 +11,7 @@
 
 ## Issues
 
-- **heroku** - some things that work locally in **DEV** are not working in heroku **PROD**.  I suspect one culprit is breaking all of these.
+- **heroku** - some things that work locally in **DEV** are not working in heroku **PROD**.  Creating a new heroku app gives same results.  I suspect one culprit is breaking all of these.
   - `<a data-method="delete" href="/logout">Logout</a>` is doing `GET /logout`
   - **console** : Uncaught TypeError: Object.defineProperty called on non-object
       - application-302__44.js:704 =  Object.defineProperty(e, "__esModule", {
@@ -22,6 +22,7 @@
       - anonymous @ application-a97__da10.js:formatted:128 =  for (e = t.target; e instanceof Element && !o(e, n); )
   - **jQuery** not working in /app/javascript/components (first occurrence in Main.js React Component)
   - **js-Routes** not working
+  - Vue UI not showing
   
   **PLAN:** 
     - try removing things until it works
