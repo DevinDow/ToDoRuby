@@ -1,11 +1,11 @@
 <template>
-  <form v-if="editing" v-bind="attrs" @submit.prevent="$emit('update', task); editing=false" @keydown.esc="editing=false">
+  <form v-if="editing" v-bind="attrs" @submit.prevent="$emit('update', task); editing=false" @keydown.esc="cancelEditing">
     <input class="done" type="checkbox" v-model="task.done" />
     <input class="priority" type="number" v-model="task.priority" />
     <input class="name" v-model="task.name" />
     <button type="submit">Submit</button>
-    <button type="button" v-on:click="editing=false">Cancel</button>
-    <button v-on:click="$emit('delete', task)" data-confirm="Are you sure?">Delete</button>
+    <button type="button" v-on:click="cancelEditing">Cancel</button>
+    <button type="button" v-on:click="$emit('delete', task)" data-confirm="Are you sure?">Delete</button>
   </form>
   <div v-else v-bind="attrs">
     <input class="done" type="checkbox" v-model="task.done" v-on:click="$emit('submit', task)" />
@@ -31,6 +31,15 @@ export default {
   computed: {
     attrs: function() {
       return this.$props.task.done ? { class: "task completed" } : { class: "task" }
+    }
+  },
+
+  methods: {
+    cancelEditing() {
+      this.editing = false
+      console.log("@@@cancelEditing this.$props.orig_task=" + this.$props.orig_task)
+      this.task = this.$props.orig_task
+      console.log("@@@cancelEditing this.task=" + this.task)
     }
   }
 }
