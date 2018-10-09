@@ -1,13 +1,13 @@
 <template>
-  <form v-if="creating" v-bind="attrs" @submit.prevent="$emit('create', task); cancelCreating()" @keydown.esc="cancelCreating">
+  <form v-if="creating" class="task" @submit.prevent="$emit('create', task); cancelCreating()" @keydown.esc="cancelCreating">
     <input class="done" type="checkbox" v-model="task.done" />
     <input class="priority" type="number" v-model="task.priority" />
     <input class="name" v-model="task.name" />
     <button type="submit">Create</button>
-    <button type="button" v-on:click="cancelCreating">Cancel</button>
+    <button type="button" @click="cancelCreating">Cancel</button>
   </form>
-  <div v-else v-bind="attrs">
-    <button v-on:click="creating=true">New Task</button>
+  <div v-else class="task">
+    <button @click="creating=true; ">New Task</button>
   </div>
 </template>
 
@@ -16,20 +16,14 @@ export default {
   data: function () {
     return {
       creating: false,
-      task: {}
+      task: {priority: 1}
     }
   },
-
-  computed: {
-    attrs: function() {
-      return this.task.done ? { class: "task completed" } : { class: "task" }
-    }
-  }, 
 
   methods: {
     cancelCreating() {
       this.creating = false
-      this.task = {}
+      this.task = {priority: 1}
     }
   }
 }
