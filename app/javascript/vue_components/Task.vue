@@ -1,5 +1,5 @@
 <template>
-  <form v-if="editing" v-bind="attrs" @submit.prevent="$emit('update', task_edit); editing=false" @keydown.esc="editing=false">
+  <form v-if="editing" class="task" @submit.prevent="$emit('update', task_edit); editing=false" @keydown.esc="editing=false">
     <input class="done" type="checkbox" v-model="task_edit.done" />
     <input class="priority" type="number" v-model="task_edit.priority" />
     <input class="name" v-model="task_edit.name" />
