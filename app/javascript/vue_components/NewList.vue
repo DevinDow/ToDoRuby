@@ -1,9 +1,9 @@
 <template>
-  <div v-if="creating" class="list">
+  <form v-if="creating" class="list" @submit.prevent="$emit('create', list); creating=false; list = {}">
     <input class="name" v-model="list.name" />
-    <button v-on:click="$emit('create', list); creating=false; list = {}">Create</button>
+    <button type="submit">Create</button>
     <button v-on:click="creating=false">Cancel</button>
-  </div>
+  </form>
   <div v-else class="list">
     <button v-on:click="creating=true">New List</button>
   </div>

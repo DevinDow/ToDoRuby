@@ -1,11 +1,11 @@
 <template>
-  <div v-if="creating" v-bind="attrs">
+  <form v-if="creating" v-bind="attrs" @submit.prevent="$emit('create', task); creating=false">
     <input class="done" type="checkbox" v-model="task.done" />
     <input class="priority" type="number" v-model="task.priority" />
     <input class="name" v-model="task.name" />
-    <button v-on:click="$emit('create', task); creating=false">Create</button>
+    <button type="submit">Create</button>
     <button v-on:click="creating=false">Cancel</button>
-  </div>
+  </form>
   <div v-else v-bind="attrs">
     <button v-on:click="creating=true">New Task</button>
   </div>
