@@ -10,6 +10,7 @@ import App from '../vue_components/App.vue'
 Vue.component('App', App)
 
 document.addEventListener('turbolinks:load', () => {
+  console.log("*** turbolinks:load");
   const vm = new Vue({
     el: '#app'
   })
