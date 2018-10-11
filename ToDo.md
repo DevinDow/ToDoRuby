@@ -14,6 +14,7 @@
 - **heroku** - some things that work locally in **DEV** are not working in heroku **PROD**.  Creating a new heroku app gives same results.
 I suspect one culprit is breaking all of these.
 I suspect JavaScript included in application.js.
+I can reproduce it locally by running production locally using *set RAILS_ENV=production* - https://gist.github.com/rwarbelow/40bd72b2aee8888d6d91  Is that just because some JS is not loading?
   - `<a data-method="delete" href="/logout">Logout</a>` is doing `GET /logout`
   - **Browser Console** : Uncaught TypeError: Object.defineProperty called on non-object
       - application-302__44.js:704 =  Object.defineProperty(e, "__esModule", {
