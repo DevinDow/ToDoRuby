@@ -11,27 +11,6 @@
 
 ## Issues
 
-- **heroku** - some things that work locally in **DEV** are not working in heroku **PROD**.  Creating a new heroku app gives same results.
-I suspect one culprit is breaking all of these.
-I suspect JavaScript included in application.js.
-I can reproduce it locally by running production locally using *set RAILS_ENV=production* - https://gist.github.com/rwarbelow/40bd72b2aee8888d6d91  Is that just because some JS is not loading?
-  - `<a data-method="delete" href="/logout">Logout</a>` is doing `GET /logout`
-  - **Browser Console** : Uncaught TypeError: Object.defineProperty called on non-object
-      - application-302__44.js:704 =  Object.defineProperty(e, "__esModule", {
-  - **Account dropdown menu** not working
-    - deploying 'before-React' did not fix it
-    - Uncaught TypeError: Cannot read property 'exclude' of undefined
-      - y.matches() @ application-a97__da10.js:formatted:37 =  return null != e.exclude ? n.call(t, e.selector) && !n.call(t, e.exclude) : n.call(t, e)
-      - anonymous @ application-a97__da10.js:formatted:128 =  for (e = t.target; e instanceof Element && !o(e, n); )
-  - **jQuery** not working in /app/javascript/components (first occurrence in Main.js React Component)
-  - **js-Routes** not working
-  - **Vue UI** not showing because *turbolinks:load* event is not triggered
-  
-  **PLAN:** 
-    - try removing things until it works
-    - try a new heroku app (heroku create)
-    - what is diferent in **PROD**?
-
 - Test not finding "SHARED WITH" in React Components.  Do I need a Test Framework that gets the results of React Components?
 
 ## TODO
