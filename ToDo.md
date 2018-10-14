@@ -11,7 +11,8 @@
 
 ## Issues
 
-- Test not finding "SHARED WITH" in React Components.  Do I need a Test Framework that gets the results of React Components?
+- Test not finding "SHARED WITH" in Vue & React Components.  Do I need a Test Framework that gets the results of React Components?
+  - https://vue-test-utils.vuejs.org/guides/
 
 ## TODO
 
