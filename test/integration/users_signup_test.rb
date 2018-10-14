@@ -22,7 +22,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                          password_confirmation: "password" } }
     end
     follow_redirect!
-    assert_template 'home/index'
+    assert_template 'home/vue'
     assert is_logged_in?
   end
 
