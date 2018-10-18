@@ -37,6 +37,7 @@
 - Features
   - Move a **Task** to another **List**
   - button on **List** to delete all **Tasks** that are done
+  - Export to Text
 
 ## Consider
 
