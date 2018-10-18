@@ -2,6 +2,7 @@ module SessionsHelper
 
   # Store user.id in permanent cookies.
   def log_in(user)
+    puts '*** log_in ' + user.inspect 
     cookies.permanent[:todo_user_id] = user.id
   end
 
@@ -12,8 +13,12 @@ module SessionsHelper
 
    # Returns the current logged-in user (if any).
    def current_user
+    puts '*** current_user '
     if cookies[:todo_user_id]
+      puts cookies[:todo_user_id]
       User.find_by(id: cookies[:todo_user_id])
+    else
+      puts 'no logged-in cookie'
     end
   end
 
