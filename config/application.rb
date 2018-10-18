@@ -19,8 +19,8 @@ module ToDo
     # Rack CORS (Cross-Origin Resource Sharing)
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins '*'
-        resource '*', headers: :any, methods: [:get, :post, :options]
+        origins 'http://localhost:4200'
+        resource '*', headers: :any, methods: :any, credentials: true
       end
     end
 
