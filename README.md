@@ -6,4 +6,5 @@
 
 ## UI
 - **Vue** & **ReactJS** for single-page app at *home#vue* & *home#react* (*root* points to *home#vue*)
-- still offer other REST routes (*/lists*, etc)
+- still offer other REST routes (*/lists*, */tasks*, etc) for standard Rails ERB implementation
+- **Angular** implementation at (https://github.com/DevinDow/ToDoAngular)
