@@ -9,7 +9,7 @@
   </form>
   <div v-else v-bind="attrs">
     <input class="done" type="checkbox" v-model="task.done" @click="$emit('update', { id: task.id, done: !task.done})" />
-    <span class="priority">{{ task.priority }}</span>
+    <span class="priority" @click="startEditing">{{ task.priority }}</span>
     <span class="name" @click="startEditing">{{ task.name }}</span>
     <button @click="$emit('delete', task)">X</button>
   </div>
