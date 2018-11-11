@@ -2,6 +2,7 @@
 
 ## Vue & React
 
+- Login
 - add **EditList** Component with *Delete* button
 
 ## React
